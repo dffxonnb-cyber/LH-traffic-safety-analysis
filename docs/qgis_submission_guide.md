@@ -68,6 +68,6 @@
 
 ## 6. 관련 문서
 
-- **공모전 필수 요구사항**: [공모전_정보.md](공모전_정보.md) — 분석 시 고려사항
+- **공모전 필수 요구사항**: [competition_context.md](competition_context.md) — 분석 시 고려사항
 - **산출물 경로**: [README.md](README.md) — 주요 산출물
 - **PostGIS 연동**: [PostGIS_연동.md](PostGIS_연동.md) — PostgreSQL/PostGIS 적재 및 QGIS에서 PostGIS 레이어 추가

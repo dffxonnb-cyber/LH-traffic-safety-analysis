@@ -3,7 +3,7 @@
 """
 TOP35 15분 발표용 PowerPoint(.pptx) 생성 스크립트.
 
-- 입력: docs/PPT_15min_top35_guide.md, PPT_15min_talk_script.md 기준
+- 공개 저장소 버전에서는 발표 가이드 문서를 제외하고 코드만 유지합니다.
 - 이미지: data/통합_데이터/top35_outputs/figures/, 시각화_공유 등 (없으면 텍스트만)
 - 출력: data/통합_데이터/top35_outputs/LH_TOP35_15min.pptx
 

@@ -91,7 +91,7 @@
 
 ## 06 API 데이터 격자 연동 (인사이트\_분석/01)
 
-> 실행 파일: `notebooks/인사이트_분석/01_API_격자_연동.ipynb`  
+> 실행 파일: `analysis_pipeline/01_grid_api_integration.ipynb`  
 > 산출물: `격자_최종통합.csv` (`격자_통합_파생변수.csv` + 아래 5개 컬럼 추가)
 
 ### 파생변수

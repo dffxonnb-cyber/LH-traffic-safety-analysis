@@ -4,18 +4,18 @@
 
 ### 1-1. Jupyter에서 순서대로 실행
 
-1. **`77_gwrf/11_blended_weight_analysis.ipynb`**  
+1. **`research_notebooks/gwrf_analysis/11_blended_weight_analysis.ipynb`**  
    - 상단부터 전부 실행 (Run All)
    - 산출: `data/grf_06_outputs/blended_weights_balanced_alpha05_*.csv`
 
-2. **`77_gwrf/12_proxy_blended_risk.ipynb`**  
+2. **`research_notebooks/gwrf_analysis/12_proxy_blended_risk.ipynb`**  
    - 상단부터 전부 실행 (Run All)
    - 산출: `data/grf_06_outputs/` 내 Risk_Base CSV
 
 ### 1-2. 또는 터미널에서 실행 (nbconvert 설치 필요)
 
 ```powershell
-cd C:\Users\a0109\.jupyter\1최종_LH\notebooks\77_gwrf
+cd C:\Users\a0109\.jupyter\LH-traffic-safety-analysis\research_notebooks\gwrf_analysis
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --inplace 11_blended_weight_analysis.ipynb
 jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --inplace 12_proxy_blended_risk.ipynb
 ```
@@ -37,11 +37,11 @@ jupyter nbconvert --ExecutePreprocessor.timeout=600 --to notebook --execute --in
 
 ## 3단계: 우선순위 산출
 
-1. `03_우선순위_산출/07_하남교산_설치우선순위.ipynb` 실행
+1. `analysis_pipeline/07_gyosan_priority_ranking.ipynb` 실행
 
 ---
 
 ## 4단계: 시설물 입지 예측
 
-1. `04_시설물_입지선정/09_hanam_gyosan_safety_facility_site_selection.ipynb` 실행
-2. `04_시설물_입지선정/04_하남교산_인프라예측.ipynb` 실행
+1. `analysis_pipeline/09_facility_site_selection.ipynb` 실행
+2. `analysis_pipeline/08_gyosan_infrastructure_forecast.ipynb` 실행

@@ -83,11 +83,11 @@ PostGIS 서버 없이 **GeoJSON 파일**만으로도 QGIS에서 동일하게 시
 - 노트북에서 `map_df.to_crs(4326).to_file("경로/노인_격자.geojson", driver="GeoJSON")` 로 저장
 - QGIS: **레이어 → 레이어 추가 → 벡터 레이어 추가** 에서 해당 GeoJSON 선택
 
-제출용은 [QGIS_제출_가이드.md](QGIS_제출_가이드.md) 절차대로 `.qgz` + 레이어 파일 패키징하면 된다.
+제출용은 [qgis_submission_guide.md](qgis_submission_guide.md) 절차대로 `.qgz` + 레이어 파일 패키징하면 된다.
 
 ---
 
 ## 5. 관련 문서
 
-- [QGIS_제출_가이드.md](QGIS_제출_가이드.md) — 공모전 QGIS 제출 절차
+- [qgis_submission_guide.md](qgis_submission_guide.md) — 공모전 QGIS 제출 절차
 - [README.md](README.md) — 산출물 경로

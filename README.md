@@ -4,73 +4,70 @@
 
 - 원본 프로젝트 폴더: `1최종_LH`
 - 공개 저장소에는 원본/가공 데이터와 일부 대용량 산출물을 포함하지 않았습니다.
-- 재현에 필요한 데이터 구조와 실행 순서는 아래 설명과 `docs/` 문서를 기준으로 확인할 수 있습니다.
+- 이 저장소는 `무엇을 분석했고`, `어떤 순서로 실행하는지`가 바로 보이도록 구조를 재정리한 버전입니다.
 
-# 1최종_LH – LH 신도시 교통안전 분석
+## Project Summary
 
-**(LH) 신도시 교통 인프라 데이터 분석을 통한 3기신도시 어린이·취약계층 교통안전 대안 제시 공모전** 프로젝트입니다.
+이 프로젝트는 4개 시·구의 교통안전 패턴을 학습한 뒤 하남교산에 전이 적용해 스마트 교통안전시설 우선순위를 제안하는 분석 프로젝트입니다.
 
-## 개요
+- 분석 대상: 성남, 화성, 하남, 송파
+- 적용 대상: 하남교산
+- 분석 단위: 100x100m grid
+- 핵심 결과: 위험점수, ARI, 유사 격자 매칭, 설치 우선순위, 대시보드
 
-- **분석 대상**: 4개 시·구 (경기 성남·화성·하남, 서울 송파)
-- **적용 대상**: 하남교산 – 지형·토지이용·교통축 기반 분석 (사고·시설 지표는 4개 시·구만 산출)
-- **핵심 산출**: 100×100m 격자 단위 위험점수·ARI(Accident Risk Index)·스마트 시설 설치 우선순위
+## Repository Structure
 
-## 목적
-
-100×100m 격자 단위로 **미성년자(12세 이하 + 13~20세)** 교통사고, 어린이보호구역 어린이사고, 스쿨존 다발지를 매핑하고, **위험점수**·**ARI**를 산출해 고위험 격자를 식별합니다. 위험점수는 어린이보호구역_사고×1 + 스쿨존_다발지×2 + 미성년자_사고×1 + KSI×3로 산출하며, 5지표(유동인구 포함) Min-Max 정규화 후 **위험점수_정규화**를 도출합니다.
-
-## 폴더 구조
-
-| 폴더 | 설명 |
+| 경로 | 역할 |
 |------|------|
-| [파이프라인/](./파이프라인/) | **실행 순서대로** 01_격자_API연동 ~ 10_하남교산_종합시각화 노트북 (숫자+접두어) |
-| [docs/](./docs/) | 공모전_정보, 위험지수_산출_근거, QGIS_제출_가이드, MODEL_RUN_GUIDE, 적용대상지_하남교산_설명 등 |
-| [data/](./data/) | 격자_데이터, 인구_데이터, 어린이_데이터, 교통_데이터, 토지_데이터, API_데이터, 통합_데이터, **참고_산출물** |
-| [scripts/](./scripts/) | run_spatial_models.py, run_grf_ranking.py, make_top35_ppt_figures.py 등 |
+| [analysis_pipeline/](./analysis_pipeline/) | 순서대로 실행하는 핵심 분석 노트북 |
+| [research_notebooks/](./research_notebooks/) | GWRF/SHAP, 인사이트 탐색, 보강 분석 자료 |
+| [dashboard/](./dashboard/) | Streamlit 대시보드 |
+| [scripts/](./scripts/) | 모델 실행, 요약표 생성, 시각화 보조 스크립트 |
+| [docs/](./docs/) | 방법론, 변수 정의, 적용 배경, 실행 가이드 |
+| [data/](./data/) | 공개 저장소에서는 원본 데이터 미포함 |
 
-## 실행 순서 (요약)
+## Recommended Reading Order
 
-**파이프라인 폴더**에서 아래 순서대로 실행하세요.
+1. [docs/README.md](./docs/README.md)
+2. [analysis_pipeline/README.md](./analysis_pipeline/README.md)
+3. [docs/risk_index_methodology.md](./docs/risk_index_methodology.md)
+4. [docs/grf_risk_methodology.md](./docs/grf_risk_methodology.md)
+5. [docs/model_run_guide.md](./docs/model_run_guide.md)
 
-1. **01_격자_API연동** → 격자_최종통합.csv 생성
-2. **02_GRF_블렌딩가중치** → blended_weights CSV
-3. **03_GRF_위험지수** → Risk_Base(위험지수) CSV
-4. **04_하남교산_유사격자매칭** → 유사 격자 매칭
-5. **05_GRF_보강통합**, **06_하남교산_GRF_SHAP**
-6. **07_하남교산_설치우선순위** → 하남교산_설치우선순위_격자.csv
-7. **08_하남교산_인프라예측**, **09_시설_입지선정**, **10_하남교산_종합시각화**
+## Core Pipeline
 
-각 노트북은 **파이프라인 폴더를 cwd**로 두고 실행하면 `../../data/` 경로가 올바르게 동작합니다. 상세는 [파이프라인/README.md](./파이프라인/README.md) 참고.
+핵심 분석 흐름은 아래 노트북 순서입니다.
 
-## 데이터셋 출처
+1. `01_grid_api_integration.ipynb`
+2. `02_grf_blended_weights.ipynb`
+3. `03_grf_risk_index.ipynb`
+4. `04_gyosan_grid_matching.ipynb`
+5. `05_grf_feature_integration.ipynb`
+6. `07_gyosan_priority_ranking.ipynb`
+7. `08_gyosan_infrastructure_forecast.ipynb`
+8. `09_facility_site_selection.ipynb`
+9. `10_gyosan_final_visualization.ipynb`
 
-- **COMPAS (한국토지주택공사 데이터 분석 플랫폼)**  
-  [LH 신도시 교통 인프라 데이터 분석 공모전 (COMPAS)](https://compas.lh.or.kr/subj/competition/info?subjNo=SBJ_2601_001)  
-  격자·인구·교통사고·어린이보호구역·토지이용 등 데이터는 위 공모전(과제)에서 제공된 자료를 사용합니다. 데이터 다운로드 및 이용 조건은 COMPAS 사이트를 참고하세요.
+상세 설명은 [analysis_pipeline/README.md](./analysis_pipeline/README.md)에 정리했습니다.
 
-- **국가공간정보포털 (국가공간정보원·NGII)**  
-  [국가공간정보포털 지도서비스](https://map.ngii.go.kr/mn/mainPage.do)  
-  공간 데이터·지도 기반 자료 참조 및 검증에 활용했습니다.
+## Data Notice
 
-## 주요 산출물
+- 원본 공모전 데이터와 대용량 파생 데이터는 저장소에 포함하지 않았습니다.
+- 로컬 재현 시 `data/` 구조를 원본 프로젝트와 동일하게 맞춰야 합니다.
+- 데이터 출처와 과제 배경은 [docs/competition_context.md](./docs/competition_context.md)를 참고하세요.
+
+## Main Outputs
 
 | 파일 | 설명 |
 |------|------|
-| `data/통합_데이터/격자_미성년자_분석.csv` | 격자별 3지표·KSI·ARI·위험점수 |
-| `data/통합_데이터/격자_미성년자_분석_정규화.csv` | 위험점수_정규화(유동인구 포함 5지표) |
-| `data/통합_데이터/격자_최종통합.csv` | **파이프라인 핵심** – 격자별 파생변수 통합 (28컬럼, 99,323행) |
-| `data/통합_데이터/하남교산_유사격자_매칭.csv` | 하남교산 ↔ 4시·구 유사격자 매핑 (770행) |
-| `data/통합_데이터/하남교산_설치우선순위_격자.csv` | 스마트 시설 설치 우선순위 (770행) |
+| `data/통합_데이터/격자_최종통합.csv` | 격자별 통합 피처 테이블 |
+| `data/통합_데이터/하남교산_유사격자_매칭.csv` | 하남교산 유사 격자 매칭 결과 |
+| `data/통합_데이터/하남교산_설치우선순위_격자.csv` | 최종 설치 우선순위 결과 |
 
-## 참고 산출물 (notebooks 복사본)
+## Documentation
 
-`notebooks/` 에 있던 효과계량·GRF 보강·검증 자료를 **복사**해 두는 곳입니다. 포트폴리오·보고서 참조용.
-
-- **위치**: [data/참고_산출물/](./data/참고_산출물/)
-- **내용**: [data/참고_산출물/README.md](./data/참고_산출물/README.md) 에 무엇이 들어 있는지 정리해 두었습니다.
-
-## 시작하기
-
-- **상세 문서·실행 순서·산출물**: [docs/README.md](./docs/README.md)
-- **공간 모델 (SLM/SEM/GRF)**: [docs/MODEL_RUN_GUIDE.md](./docs/MODEL_RUN_GUIDE.md)
+- 개요 및 문서 인덱스: [docs/README.md](./docs/README.md)
+- 실행 가이드: [docs/model_run_guide.md](./docs/model_run_guide.md)
+- 위험지수 정의: [docs/risk_index_methodology.md](./docs/risk_index_methodology.md)
+- GRF 기반 방법론: [docs/grf_risk_methodology.md](./docs/grf_risk_methodology.md)
+- 하남교산 적용 배경: [docs/gyosan_site_context.md](./docs/gyosan_site_context.md)
