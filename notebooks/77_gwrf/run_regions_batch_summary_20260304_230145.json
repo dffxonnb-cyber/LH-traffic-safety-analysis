@@ -1,0 +1,35 @@
+[
+  {
+    "region": "dongtan",
+    "regex": "동탄",
+    "region_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_dongtan.ipynb",
+    "executed_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_dongtan_executed_20260304_230145.ipynb",
+    "run_dir": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_dongtan_png_20260304_230145",
+    "log": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_dongtan_png_20260304_230145\\run.log",
+    "status": "failed",
+    "png_count": 0
+  },
+  {
+    "region": "pangyo",
+    "regex": "판교",
+    "region_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_pangyo.ipynb",
+    "executed_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_pangyo_executed_20260304_230145.ipynb",
+    "run_dir": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_pangyo_png_20260304_230145",
+    "log": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_pangyo_png_20260304_230145\\run.log",
+    "status": "failed",
+    "png_count": 0
+  },
+  {
+    "region": "songpa",
+    "regex": "송파",
+    "region_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_songpa.ipynb",
+    "executed_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_songpa_executed_20260304_230145.ipynb",
+    "run_dir": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_songpa_png_20260304_230145",
+    "log": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_songpa_png_20260304_230145\\run.log",
+    "status": "ok",
+    "png_count": 24,
+    "png_manifest": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_songpa_png_20260304_230145\\png_manifest.json",
+    "png_dir": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_songpa_png_20260304_230145\\png_exports",
+    "feature_map_dir": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\1피처변수별png\\songpa"
+  }
+]

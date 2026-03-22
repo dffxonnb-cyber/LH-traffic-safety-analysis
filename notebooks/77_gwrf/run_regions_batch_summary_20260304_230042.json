@@ -1,0 +1,17 @@
+[
+  {
+    "region": "dongtan",
+    "status": "failed",
+    "error": "bad escape \\u at position 23"
+  },
+  {
+    "region": "pangyo",
+    "status": "failed",
+    "error": "bad escape \\u at position 23"
+  },
+  {
+    "region": "songpa",
+    "status": "failed",
+    "error": "bad escape \\u at position 23"
+  }
+]

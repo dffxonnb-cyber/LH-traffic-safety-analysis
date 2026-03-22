@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Local data and outputs
+data/
+outputs/
+*.gpkg
+*.shp
+*.shx
+*.dbf
+*.prj
+*.cpg
+*.geojson
+*.csv
+*.xlsx
+*.xls
+
+# Large generated artifacts
+*.pptx
+*.qgz

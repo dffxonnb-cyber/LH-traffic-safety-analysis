@@ -1,0 +1,5 @@
+[START] notebook=C:\Users\a0109\.jupyter\1최종_LH\notebooks\grf_shap_100x100_regions\06_grf_shap_100x100_misa.ipynb
+[CMD] C:\Program Files\Python313\python.exe -m nbconvert --to notebook --execute C:\Users\a0109\.jupyter\1최종_LH\notebooks\grf_shap_100x100_regions\06_grf_shap_100x100_misa.ipynb --output 06_grf_shap_100x100_misa_executed_20260304_162736.ipynb --ExecutePreprocessor.timeout=-1
+[NbConvertApp] Converting notebook C:\Users\a0109\.jupyter\1����_LH\notebooks\grf_shap_100x100_regions\06_grf_shap_100x100_misa.ipynb to notebook
+C:\Users\a0109\AppData\Roaming\Python\Python313\site-packages\zmq\_future.py:718: RuntimeWarning: Proactor event loop does not implement add_reader family of methods required for zmq. Registering an additional selector thread for add_reader support via tornado. Use `asyncio.set_event_loop_policy(WindowsSelectorEventLoopPolicy())` to avoid this warning.
+  self._get_loop()

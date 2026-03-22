@@ -1,0 +1,30 @@
+# 1최종_LH — 분석 환경 (Python 3.10+ 권장)
+# 설치: pip install -r requirements.txt
+
+# 핵심
+pandas>=1.5.0
+numpy>=1.21.0
+geopandas>=0.12.0
+shapely>=2.0.0
+
+# 시각화
+matplotlib>=3.5.0
+
+# 머신러닝·공간 모델
+scikit-learn>=1.1.0
+scipy>=1.9.0
+
+# 노트북
+jupyter>=1.0.0
+notebook>=6.5.0
+
+# 엑셀 (노인 추가분석 등)
+openpyxl>=3.0.0
+
+# PowerPoint 생성 (15분 발표용)
+python-pptx>=0.6.21
+
+# 선택 (API·추가 분석 시)
+# requests>=2.28.0
+# folium>=0.14.0
+# plotly>=5.10.0

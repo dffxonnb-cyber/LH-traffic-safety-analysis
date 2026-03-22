@@ -1,0 +1,13 @@
+[
+  {
+    "region": "dongtan",
+    "gbn_regex": "??",
+    "zone_regex": "????|??",
+    "region_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_dongtan.ipynb",
+    "executed_notebook": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\06_grf_shap_100x100_dongtan_executed_20260305_010928.ipynb",
+    "run_dir": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_dongtan_png_20260305_010928",
+    "log": "C:\\Users\\a0109\\.jupyter\\1최종_LH\\notebooks\\77_gwrf\\run_dongtan_png_20260305_010928\\run.log",
+    "status": "failed",
+    "png_count": 0
+  }
+]
