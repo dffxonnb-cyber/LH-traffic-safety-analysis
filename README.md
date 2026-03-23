@@ -16,17 +16,17 @@
 
 ## Key Visuals
 
-### Final Priority Management Areas
+### 4-City Risk Overview
 
-![Final priority management areas](./research_notebooks/gwrf_analysis/prediction_hotspot_map_source_style.png)
+4개 시구의 100m 격자 위험도를 동일 기준으로 비교한 이미지입니다. 화성 전체 대신 동탄 생활권만 잘라서 시각화했습니다.
 
-### Major GWRF Feature Importance Maps
+![4-city risk overview](./docs/images/four-city-risk-overview-ko.png)
 
-![Major GWRF feature importance maps](./research_notebooks/gwrf_analysis/major_variable_maps_source_style.png)
+### Hanam Gyosan Before/After
 
-### Additional High-Risk Feature Example
+하남교산 적용 전 위험도와, 상위 15% 격자에 10% 저감 시나리오를 반영한 적용 후 위험도를 나란히 비교한 이미지입니다.
 
-![Additional high-risk feature example](./research_notebooks/gwrf_analysis/local_importance_additional_feature.png)
+![Hanam Gyosan before/after](./docs/images/gyosan-before-after-ko.png)
 
 ## Repository Structure
 
