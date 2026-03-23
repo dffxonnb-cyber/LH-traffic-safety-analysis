@@ -2,7 +2,6 @@
 
 포트폴리오 및 GitHub 공개용으로 정리한 버전입니다.
 
-- 원본 프로젝트 폴더: `1최종_LH`
 - 공개 저장소에는 원본/가공 데이터와 일부 대용량 산출물을 포함하지 않았습니다.
 - 이 저장소는 `무엇을 분석했고`, `어떤 순서로 실행하는지`가 바로 보이도록 구조를 재정리한 버전입니다.
 
@@ -14,6 +13,20 @@
 - 적용 대상: 하남교산
 - 분석 단위: 100x100m grid
 - 핵심 결과: 위험점수, ARI, 유사 격자 매칭, 설치 우선순위, 대시보드
+
+## Key Visuals
+
+### Final Priority Management Areas
+
+![Final priority management areas](./research_notebooks/gwrf_analysis/prediction_hotspot_map_source_style.png)
+
+### Major GWRF Feature Importance Maps
+
+![Major GWRF feature importance maps](./research_notebooks/gwrf_analysis/major_variable_maps_source_style.png)
+
+### Additional High-Risk Feature Example
+
+![Additional high-risk feature example](./research_notebooks/gwrf_analysis/local_importance_additional_feature.png)
 
 ## Repository Structure
 
@@ -53,7 +66,7 @@
 ## Data Notice
 
 - 원본 공모전 데이터와 대용량 파생 데이터는 저장소에 포함하지 않았습니다.
-- 로컬 재현 시 `data/` 구조를 원본 프로젝트와 동일하게 맞춰야 합니다.
+- 로컬 재현 또는 공개 배포 시 필요한 승인 데이터만 저장소의 `data/`에 넣거나, 환경변수 `LH_DATA_ROOT`로 별도 데이터 경로를 지정해야 합니다.
 - 데이터 출처와 과제 배경은 [docs/competition_context.md](./docs/competition_context.md)를 참고하세요.
 
 ## Main Outputs
