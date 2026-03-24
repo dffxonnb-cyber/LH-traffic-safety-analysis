@@ -30,3 +30,5 @@ outputs/
 # Large generated artifacts
 *.pptx
 *.qgz
+streamlit-home*.png
+public_dashboard/
