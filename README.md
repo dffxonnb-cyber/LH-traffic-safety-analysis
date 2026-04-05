@@ -1,4 +1,4 @@
-# LH Traffic Safety Analysis
+# LH 교통안전 분석
 
 4개 시·구의 교통안전 패턴을 학습한 뒤, 사고 이력이 충분하지 않은 하남교산에 전이 적용해 안전시설 우선순위를 제안한 공간 분석 프로젝트입니다. 핵심은 `위험도 산정 -> 전이 검증 -> 우선순위 추천 -> 시나리오 시각화`를 하나의 의사결정 흐름으로 연결한 점입니다.
 
@@ -10,7 +10,7 @@
 | 실제 의사결정 가치 | 위험 격자 식별, 우선 설치 후보 도출, `recommended_package`/`recommendation_reason` 기반 현장 설명까지 연결 |
 | 재현 가능한 범위 | 공개 문서 검토, 핵심 시각화 확인, [교산 저감 매핑 CSV](./docs/data/gyosan_effect_reduction_by_gid.csv) 검토, [대시보드 UI 코드](./dashboard/app.py) 검토 |
 | 재현 불가능한 범위 | 원본 공모전 데이터가 필요한 격자 통합, GRF 학습, 최종 우선순위 재산출 |
-| 대체 확인 방법 | [핵심 시각화](#핵심-시각화), [검증 요약 문서](./docs/TOP35_UPGRADE_REPORT.md), [방법론 문서](./docs/grf_risk_methodology.md), [재현성 가이드](./docs/reproducibility_and_validation.md) |
+| 대체 확인 방법 | [핵심 시각화](#핵심-시각화), [재현성·검증 가이드](./docs/reproducibility_and_validation.md)(TOP35 수치 포함), [방법론 문서](./docs/grf_risk_methodology.md) |
 
 ## 왜 이 프로젝트가 가치 있었는가
 
@@ -22,11 +22,11 @@
 
 | 구분 | 핵심 수치 | 의미 | 근거 |
 |------|-----------|------|------|
-| 전이 검증 | Mean AUC `0.8604` | 지역을 하나씩 홀드아웃해도 분리력이 유지됨 | [TOP35_UPGRADE_REPORT.md](./docs/TOP35_UPGRADE_REPORT.md) |
-| 핫스팟 포착력 | Mean Top-10% Lift `4.39x` | 상위 위험 구간이 무작위보다 훨씬 높은 사고 집중도를 보임 | [TOP35_UPGRADE_REPORT.md](./docs/TOP35_UPGRADE_REPORT.md) |
-| 최저 성능 구간 | Worst holdout AUC `0.7979` | 가장 불리한 지역에서도 해석 가능한 수준의 전이 성능 확보 | [TOP35_UPGRADE_REPORT.md](./docs/TOP35_UPGRADE_REPORT.md) |
-| 선정 강건성 | Monte Carlo mean Jaccard `0.503` | Top20 후보가 시나리오 변화에 완전히 무너지지 않음을 확인 | [TOP35_UPGRADE_REPORT.md](./docs/TOP35_UPGRADE_REPORT.md) |
-| 현장 설명성 | `recommended_package`, `recommendation_reason` 컬럼 제공 | "왜 이 위치에 이 시설인가"를 슬라이드/Q&A 수준으로 설명 가능 | [TOP35_UPGRADE_REPORT.md](./docs/TOP35_UPGRADE_REPORT.md) |
+| 전이 검증 | Mean AUC `0.8604` | 지역을 하나씩 홀드아웃해도 분리력이 유지됨 | [reproducibility_and_validation.md](./docs/reproducibility_and_validation.md#top35-validation) |
+| 핫스팟 포착력 | Mean Top-10% Lift `4.39x` | 상위 위험 구간이 무작위보다 훨씬 높은 사고 집중도를 보임 | [reproducibility_and_validation.md](./docs/reproducibility_and_validation.md#top35-validation) |
+| 최저 성능 구간 | Worst holdout AUC `0.7979` | 가장 불리한 지역에서도 해석 가능한 수준의 전이 성능 확보 | [reproducibility_and_validation.md](./docs/reproducibility_and_validation.md#top35-validation) |
+| 선정 강건성 | Monte Carlo mean Jaccard `0.503` | Top20 후보가 시나리오 변화에 완전히 무너지지 않음을 확인 | [reproducibility_and_validation.md](./docs/reproducibility_and_validation.md#top35-validation) |
+| 현장 설명성 | `recommended_package`, `recommendation_reason` 컬럼 제공 | "왜 이 위치에 이 시설인가"를 슬라이드/Q&A 수준으로 설명 가능 | [reproducibility_and_validation.md](./docs/reproducibility_and_validation.md#top35-validation) |
 
 ## 핵심 시각화
 
@@ -44,10 +44,9 @@
 
 ## 공개 저장소에서 확인할 수 있는 것
 
-1. [재현성/검증 가이드](./docs/reproducibility_and_validation.md)에서 공개 저장소 기준 확인 가능 범위를 먼저 확인합니다.
-2. [TOP35_UPGRADE_REPORT.md](./docs/TOP35_UPGRADE_REPORT.md)에서 전이 검증, 강건성, 실행 계획 수치를 확인합니다.
-3. [grf_risk_methodology.md](./docs/grf_risk_methodology.md)와 [risk_index_methodology.md](./docs/risk_index_methodology.md)에서 위험도 정의와 평가 기준을 확인합니다.
-4. [교산 저감 매핑 CSV](./docs/data/gyosan_effect_reduction_by_gid.csv)와 [build_readme_key_visuals.py](./scripts/build_readme_key_visuals.py)로 공개 산출물 구조를 검토합니다.
+1. [재현성/검증 가이드](./docs/reproducibility_and_validation.md)에서 공개 저장소 기준 확인 가능 범위와 [TOP35 검증 요약](./docs/reproducibility_and_validation.md#top35-validation)을 확인합니다.
+2. [grf_risk_methodology.md](./docs/grf_risk_methodology.md)와 [risk_index_methodology.md](./docs/risk_index_methodology.md)에서 위험도 정의와 평가 기준을 확인합니다.
+3. [교산 저감 매핑 CSV](./docs/data/gyosan_effect_reduction_by_gid.csv)와 [build_readme_key_visuals.py](./scripts/build_readme_key_visuals.py)로 공개 산출물 구조를 검토합니다.
 
 ## 엔지니어링 신호
 

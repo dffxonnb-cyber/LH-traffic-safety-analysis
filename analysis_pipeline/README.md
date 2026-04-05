@@ -1,4 +1,4 @@
-# Analysis Pipeline
+# 분석 파이프라인
 
 핵심 분석 노트북을 실행 순서대로 정리한 폴더입니다.
 
@@ -17,7 +17,7 @@
 | 09 | `09_facility_site_selection.ipynb` | 스마트 시설 입지 선정 |
 | 10 | `10_gyosan_final_visualization.ipynb` | 최종 결과 시각화 |
 
-## Notes
+## 참고
 
 - `06_하남교산_GRF_SHAP.ipynb`는 공개 저장소에서 제외했습니다.
 - `02` 실행 결과가 `03`의 입력으로 사용됩니다.

@@ -1,20 +1,20 @@
-# Public Deployment Guide
+# 공개 배포 가이드
 
 이 대시보드는 공개 배포가 가능합니다. 다만 아래 조건을 만족해야 합니다.
 
-## Safe-by-default 원칙
+## 기본 안전 원칙
 
 - 개인 PC 절대경로를 사용하지 않습니다.
 - 승인된 데이터만 `data/`에 포함하거나 `LH_DATA_ROOT`로 외부 경로를 연결합니다.
 - `OPENAI_API_KEY`는 저장소에 넣지 않고 배포 환경의 시크릿으로만 설정합니다.
 
-## 권장 공개 방식
+## 권장 배포 방식
 
 1. `dashboard/` 폴더와 필요한 `data/` 하위 승인 파일만 별도 공개 저장소로 분리합니다.
 2. `pip install -r dashboard/requirements.txt` 로 의존성을 설치합니다.
 3. `streamlit run dashboard/app.py` 또는 Streamlit Community Cloud로 배포합니다.
 
-## 배포 전 체크리스트
+## 배포 전 점검 목록
 
 - `data/` 안에 공개 가능한 파일만 넣었는지 확인
 - 재배포 권한이 불명확한 GeoJSON/CSV는 제외

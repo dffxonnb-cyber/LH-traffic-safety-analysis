@@ -6,7 +6,7 @@ http://m.hanamtimes.com/news/articleView.html?idxno=12624
 
 # 불확실성 전제형 신도시 안전 설계 모델
 
-## Adaptive Safety under Spatial Uncertainty (ASSU)
+## 공간 불확실성 대응 안전 설계 (ASSU)
 
 ---
 
@@ -94,7 +94,7 @@ https://www.newspim.com/news/view/20260112001097
 - (Node120m × Wn)
 - (Volatility × Wc)
 
-Volatility는 다음을 반영한다.
+`Volatility`는 다음을 반영한다.
 
 - 개발 단계별 개통 시점 차이
 - 공정 구역 장기화 가능성

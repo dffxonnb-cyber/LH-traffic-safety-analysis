@@ -1,4 +1,4 @@
-# Documentation Overview
+# 문서 개요
 
 이 폴더는 공개 저장소 기준으로 핵심 문서를 빠르게 찾을 수 있도록 정리한 인덱스입니다.
 
@@ -49,9 +49,8 @@ LH-traffic-safety-analysis/
 | [indirect_feature_data_guide.md](indirect_feature_data_guide.md) | 외부 데이터 후보 정리 |
 | [postgis_integration_guide.md](postgis_integration_guide.md) | PostGIS 연동 참고 |
 | [project_documentation.md](project_documentation.md) | 확장형 프로젝트 설명서 |
-| [TOP35_UPGRADE_REPORT.md](TOP35_UPGRADE_REPORT.md) | TOP35 검증 요약 |
+| [reproducibility_and_validation.md](reproducibility_and_validation.md) | 재현성 가이드 · TOP35 검증 요약(동일 문서 내 절) |
 
 ## 참고
 
 - 발표 자료 PDF: [safe_new_town_for_vulnerable_road_users.pdf](safe_new_town_for_vulnerable_road_users.pdf)
-- 저장소 정리 메모: [repository_cleanup_guide.md](repository_cleanup_guide.md)
