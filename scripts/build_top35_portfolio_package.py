@@ -649,7 +649,12 @@ def render_report(
     mean_jaccard = float(mc_runs_df["jaccard_vs_current_top20"].mean()) if len(mc_runs_df) else float("nan")
 
     lines: list[str] = []
-    lines.append("# TOP35 Upgrade Report")
+    lines.append("# TOP35 Upgrade Report (자동 생성 스냅샷)")
+    lines.append("")
+    lines.append(
+        "> 파이프라인 실행 시 생성된다. 저장소에 게시된 검증 설명·근거의 기준 문서는 "
+        "`reproducibility_and_validation.md`의 TOP35 절이다."
+    )
     lines.append("")
     lines.append("## 1) Input Discovery")
     lines.append(f"- 4-region integrated CSV: `{csv_train.as_posix()}`")
@@ -754,7 +759,7 @@ def main() -> None:
         "gyosan_mc_runs": out_dir / "gyosan_mc_runs.csv",
         "gyosan_scenario_sensitivity": out_dir / "gyosan_scenario_sensitivity.csv",
         "gyosan_top20_facility_blueprint": out_dir / "gyosan_top20_facility_blueprint.csv",
-        "report_md": docs_dir / "TOP35_UPGRADE_REPORT.md",
+        "report_md": docs_dir / "top35_validation_snapshot.md",
         "manifest_json": out_dir / "top35_manifest.json",
     }
 
@@ -883,7 +888,7 @@ def run_full_pipeline(
         gy_blueprint.to_csv(
             paths["gyosan_top20_facility_blueprint"], index=False, encoding="utf-8-sig"
         )
-        report_md = docs_dir / "TOP35_UPGRADE_REPORT.md"
+        report_md = docs_dir / "top35_validation_snapshot.md"
         render_report(
             out_md=report_md,
             csv_train=csv_train,
