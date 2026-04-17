@@ -12,7 +12,7 @@
 2. [../analysis_pipeline/README.md](../analysis_pipeline/README.md)
 3. [risk_index_methodology.md](risk_index_methodology.md)
 4. [grf_risk_methodology.md](grf_risk_methodology.md)
-5. [model_run_guide.md](model_run_guide.md)
+5. [MODEL_RUN_GUIDE.md](MODEL_RUN_GUIDE.md)
 
 ## 현재 저장소 구조
 
@@ -34,7 +34,7 @@ LH-traffic-safety-analysis/
 | [grid_variable_dictionary.md](grid_variable_dictionary.md) | 격자 단위 변수 정의 |
 | [risk_index_methodology.md](risk_index_methodology.md) | 관측 기반 위험점수와 ARI 산출 근거 |
 | [grf_risk_methodology.md](grf_risk_methodology.md) | GRF 기반 예측 위험지수 산출 근거 |
-| [model_run_guide.md](model_run_guide.md) | Python 스크립트 실행 가이드 |
+| [MODEL_RUN_GUIDE.md](MODEL_RUN_GUIDE.md) | Python 스크립트 실행 가이드 |
 | [qgis_submission_guide.md](qgis_submission_guide.md) | QGIS 제출용 결과 정리 가이드 |
 | [gyosan_site_context.md](gyosan_site_context.md) | 하남교산 적용 배경과 해석 방향 |
 | [feature_engineering_plan.md](feature_engineering_plan.md) | 파생 변수와 간접 변수 설계 방향 |
@@ -48,7 +48,7 @@ LH-traffic-safety-analysis/
 | [regional_terrain_visual_notes.md](regional_terrain_visual_notes.md) | 지형/시각화 메모 |
 | [indirect_feature_data_guide.md](indirect_feature_data_guide.md) | 외부 데이터 후보 정리 |
 | [postgis_integration_guide.md](postgis_integration_guide.md) | PostGIS 연동 참고 |
-| [project_documentation.md](project_documentation.md) | 확장형 프로젝트 설명서 |
+| [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md) | 확장형 프로젝트 설명서 |
 | [reproducibility_and_validation.md](reproducibility_and_validation.md) | 재현성 가이드 · TOP35 검증 요약(동일 문서 내 절) |
 
 ## 참고

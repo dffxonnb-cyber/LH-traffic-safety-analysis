@@ -37,4 +37,3 @@ streamlit run app.py
 ### LLM/멀티모달(LMM) 요약(선택)
 
 환경변수 `OPENAI_API_KEY`가 설정되어 있으면, 선택한 격자/지표를 근거 기반으로 요약하는 “분석 어시스턴트” 탭이 활성화됩니다.
-*** End Patch
