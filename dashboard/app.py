@@ -111,6 +111,8 @@ class GeoDataset:
 
 
 ROOT = Path(__file__).resolve().parent
+DOCS_ROOT = (ROOT / ".." / "docs").resolve()
+DOCS_IMAGE_DIR = DOCS_ROOT / "images"
 
 
 def resolve_data_root() -> Path:
@@ -166,6 +168,11 @@ PROJECT_REGION_META = {
         "summary": "지하철·상업·주거가 조밀하게 중첩되어 단위 격자 간 밀도 차이가 크고, 상위 격자의 설명력이 강합니다.",
         "focus": "고밀 결절 보호",
     },
+}
+
+PUBLIC_SAFE_VISUALS = {
+    "4개 시·구 위험 격자 비교": DOCS_IMAGE_DIR / "four-city-risk-overview-ko.png",
+    "하남교산 적용 전/후 시나리오": DOCS_IMAGE_DIR / "gyosan-before-after-ko.png",
 }
 
 
@@ -237,6 +244,96 @@ def render_callout(title: str, copy: str, pills: Optional[Sequence[str]] = None)
         f'<section class="callout-card"><h4>{html.escape(title)}</h4><p class="callout-copy">{html.escape(copy)}</p>{pill_html}</section>',
         unsafe_allow_html=True,
     )
+
+
+def required_dashboard_paths() -> List[Path]:
+    return [
+        DS_4CITY_CHILD.path,
+        DS_4CITY_ELDER.path,
+        GYOSAN_GRID.path,
+        GYOSAN_SELECTED_K20.path,
+    ]
+
+
+def missing_dashboard_paths() -> List[Path]:
+    return [path for path in required_dashboard_paths() if not path.exists()]
+
+
+def dashboard_data_available() -> bool:
+    return not missing_dashboard_paths()
+
+
+def render_public_safe_mode(mode: str, basemap: str, latest_files: Dict[str, Path]) -> None:
+    render_hero(
+        "공개 저장소용 미리보기 모드",
+        "원본 공간 데이터 없이도 핵심 결과와 검토 포인트를 확인할 수 있도록 public-safe 화면을 제공합니다.",
+        [
+            display_region_name(mode),
+            Path(DATA_ROOT).name,
+            "public-safe fallback",
+        ],
+        "Public Preview",
+    )
+    render_callout(
+        "왜 fallback 화면이 보이나요?",
+        "이 저장소는 승인된 데이터만 공개하기 때문에, 공개 저장소만으로는 원본 GeoJSON/CSV 전체를 재생성할 수 없습니다. 대신 README와 문서에서 확인 가능한 핵심 시각화와 검토 포인트를 먼저 보여줍니다.",
+        pills=["공개 안전 모드", "원본 데이터 비포함", "검토 우선"],
+    )
+
+    cards = [
+        ("필수 데이터 상태", "미연결", f"{len(missing_dashboard_paths())}개 필수 경로 누락"),
+        ("GRF/SHAP 결과", "선택 연결", "없어도 미리보기는 가능"),
+        ("지도 스타일", next((name for name, value in MAP_STYLES.items() if value == basemap), basemap), "실데이터 연결 시 적용"),
+        ("검토 경로", "README / docs", "공개 저장소 기준"),
+    ]
+    render_metric_tiles(cards)
+
+    render_section_head("공개 저장소에서 바로 확인할 수 있는 것", "데이터가 없을 때도 읽히는 결과물과 검토 순서를 한 화면에 모았습니다.")
+    for title, image_path in PUBLIC_SAFE_VISUALS.items():
+        if image_path.exists():
+            st.markdown(f"#### {title}")
+            st.image(str(image_path), use_container_width=True)
+
+    render_section_head("우선 확인할 문서", "실데이터 연결 없이도 프로젝트 가치를 설명하는 핵심 문서입니다.")
+    guide_rows = pd.DataFrame(
+        [
+            {
+                "문서": "README.md",
+                "역할": "문제 정의, 검증 요약, 공개 확인 포인트",
+                "경로": "./README.md",
+            },
+            {
+                "문서": "docs/reproducibility_and_validation.md",
+                "역할": "공개 저장소 기준 검증 범위와 TOP35 수치",
+                "경로": "./docs/reproducibility_and_validation.md",
+            },
+            {
+                "문서": "docs/grf_risk_methodology.md",
+                "역할": "GRF 위험도와 전이 논리 설명",
+                "경로": "./docs/grf_risk_methodology.md",
+            },
+            {
+                "문서": "dashboard/PUBLIC_DEPLOY.md",
+                "역할": "승인 데이터 연결과 공개 배포 가이드",
+                "경로": "./dashboard/PUBLIC_DEPLOY.md",
+            },
+        ]
+    )
+    st.dataframe(guide_rows, use_container_width=True, hide_index=True)
+
+    if latest_files:
+        timestamps = [ts for ts in (extract_run_timestamp(path) for path in latest_files.values()) if ts is not None]
+        if timestamps:
+            render_callout(
+                "참고",
+                f"현재 연결된 GRF/SHAP 결과 기준 최신 run 시각은 {max(timestamps).strftime('%Y-%m-%d %H:%M:%S')} 입니다.",
+            )
+
+    with st.expander("누락된 필수 경로 보기"):
+        for path in missing_dashboard_paths():
+            st.code(str(path))
+
+    st.info("실제 지도 탐색을 열려면 승인된 데이터를 `LH_DATA_ROOT` 또는 저장소 내부 `data/`로 연결하세요.")
 
 
 def render_region_profile_cards(region_names: Sequence[str]) -> None:
@@ -1042,6 +1139,8 @@ def main() -> None:
 
     if mode.startswith("도구"):
         render_tool_mode(basemap)
+    elif not dashboard_data_available():
+        render_public_safe_mode(mode=mode, basemap=basemap, latest_files=latest_files)
     elif mode.startswith("4개"):
         render_four_city_mode(basemap)
     else:
