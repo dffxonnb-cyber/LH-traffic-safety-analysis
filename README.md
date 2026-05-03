@@ -157,6 +157,7 @@
 2. [GRF Risk Methodology](./docs/grf_risk_methodology.md)와 [Risk Index Methodology](./docs/risk_index_methodology.md)에서 위험도 정의와 평가 기준을 확인합니다.
 3. [Gyosan Effect Reduction Mapping CSV](./docs/data/gyosan_effect_reduction_by_gid.csv)와 [build_readme_key_visuals.py](./scripts/build_readme_key_visuals.py)로 공개 산출물 구조를 검토합니다.
 4. [Dashboard App](./dashboard/app.py)에서 위험도 결과를 대시보드 형태로 보여주는 UI 코드를 확인할 수 있습니다.
+5. [VERIFY.md](./VERIFY.md)에서 공개 검증 명령, CI 범위, 원본 데이터 경계를 확인합니다.
 
 ## Engineering Signals
 
