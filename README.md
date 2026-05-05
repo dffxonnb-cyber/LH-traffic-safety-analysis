@@ -1,5 +1,9 @@
 # LH Traffic Safety Analysis
 
+[![Verify](https://github.com/dffxonnb-cyber/LH-traffic-safety-analysis/actions/workflows/verify.yml/badge.svg)](https://github.com/dffxonnb-cyber/LH-traffic-safety-analysis/actions/workflows/verify.yml)
+[![Mean AUC](https://img.shields.io/badge/Mean%20AUC-0.8604-2563eb)](./docs/reproducibility_and_validation.md#top35-validation)
+[![Top 10 Lift](https://img.shields.io/badge/Top--10%25%20Lift-4.39x-0f766e)](./docs/reproducibility_and_validation.md#top35-validation)
+
 > Spatial traffic safety risk analysis for infrastructure prioritization in new town planning.
 
 사고 이력이 충분한 기존 도시의 교통안전 패턴을 학습한 뒤, 사고 데이터가 부족한 하남교산 신도시 후보지에 전이 적용해 안전시설 설치 우선순위를 제안한 공간 분석 프로젝트입니다.  
