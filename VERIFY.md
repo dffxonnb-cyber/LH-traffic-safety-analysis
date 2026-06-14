@@ -10,12 +10,13 @@ This repository separates public-safe verification from full competition-data re
 | Public visuals | Yes | Tests confirm required public-safe visuals exist. |
 | Validation summary | Yes | `docs/reproducibility_and_validation.md` documents TOP35 and transfer validation evidence. |
 | Review CSV | Yes | `docs/data/gyosan_effect_reduction_by_gid.csv` is tracked for inspection. |
-| Full GRF and grid pipeline | No | Original competition/source data is excluded. |
+| Full spatial-coordinate Random Forest and grid pipeline | No | Original competition/source data is excluded. |
 
 ## Local Verification
 
 ```bash
 pip install -r dashboard/requirements.txt
+python scripts/build_portfolio_evidence.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
@@ -33,6 +34,7 @@ GitHub Actions runs:
 
 ```bash
 pip install -r dashboard/requirements.txt
+python scripts/build_portfolio_evidence.py
 python -m unittest discover -s tests -p "test_*.py"
 ```
 
@@ -44,6 +46,6 @@ python -m unittest discover -s tests -p "test_*.py"
 
 ## Known Limits
 
-- CI does not rerun the full GRF model.
+- CI does not rerun the full spatial-coordinate Random Forest model.
 - Public tests verify safe import/render assumptions, not model retraining.
 - The validation document is the main evidence source for model-quality claims.

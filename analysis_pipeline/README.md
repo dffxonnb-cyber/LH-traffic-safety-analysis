@@ -8,10 +8,10 @@
 | 단계 | 파일명 | 역할 |
 |------|--------|------|
 | 01 | `01_grid_api_integration.ipynb` | API 데이터와 격자를 연동해 통합 테이블 기반 구축 |
-| 02 | `02_grf_blended_weights.ipynb` | GRF global/local importance를 블렌딩 |
-| 03 | `03_grf_risk_index.ipynb` | 블렌딩 가중치로 GRF 기반 위험지수 산출 |
+| 02 | `02_grf_blended_weights.ipynb` | legacy GRF 명칭의 global/local importance 실험값 블렌딩 |
+| 03 | `03_grf_risk_index.ipynb` | 블렌딩 가중치로 예측 기반 위험지수 산출 |
 | 04 | `04_gyosan_grid_matching.ipynb` | 하남교산과 4개 시·구 유사 격자 매칭 |
-| 05 | `05_grf_feature_integration.ipynb` | GRF 기반 피처 보강·통합 |
+| 05 | `05_grf_feature_integration.ipynb` | 공간 RF 관련 피처 보강·통합 |
 | 07 | `07_gyosan_priority_ranking.ipynb` | 시설 설치 우선순위 산출 |
 | 08 | `08_gyosan_infrastructure_forecast.ipynb` | 하남교산 인프라 수요 예측 |
 | 09 | `09_facility_site_selection.ipynb` | 스마트 시설 입지 선정 |
@@ -19,6 +19,7 @@
 
 ## 참고
 
+- 노트북·폴더명의 `GRF`·`GWRF`는 기존 실행 경로 호환을 위한 legacy label입니다. 공개 저장소에서 확인되는 핵심 모델은 공간 좌표를 포함한 Random Forest입니다.
 - `06_하남교산_GRF_SHAP.ipynb`는 공개 저장소에서 제외했습니다.
 - `02` 실행 결과가 `03`의 입력으로 사용됩니다.
-- `data/grf_06_outputs/`가 있어야 일부 GRF 단계가 동작합니다.
+- `data/grf_06_outputs/`가 있어야 일부 legacy 명칭 단계가 동작합니다.

@@ -23,6 +23,28 @@ class DashboardPublicSafeTests(unittest.TestCase):
         missing = [path for path in app.PUBLIC_SAFE_VISUALS.values() if not path.exists()]
         self.assertEqual(missing, [])
 
+    def test_portfolio_evidence_assets_exist(self) -> None:
+        expected = [
+            PROJECT_ROOT / "docs" / "images" / "portfolio-performance-summary.svg",
+            PROJECT_ROOT / "docs" / "images" / "portfolio-validation-summary.svg",
+            PROJECT_ROOT / "docs" / "images" / "public-top20-priority-preview.svg",
+            PROJECT_ROOT / "docs" / "data" / "public_top20_priority.csv",
+        ]
+        self.assertEqual([path for path in expected if not path.exists()], [])
+
+    def test_public_top20_is_limited_and_marks_non_public_fields(self) -> None:
+        import csv
+
+        path = PROJECT_ROOT / "docs" / "data" / "public_top20_priority.csv"
+        with path.open(encoding="utf-8-sig", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+
+        self.assertEqual(len(rows), 20)
+        self.assertEqual([int(row["rank"]) for row in rows], list(range(1, 21)))
+        self.assertTrue(
+            all("needs confirmation" in row["facility_package_public_status"] for row in rows)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

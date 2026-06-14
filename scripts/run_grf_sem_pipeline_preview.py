@@ -1,14 +1,14 @@
 ﻿from __future__ import annotations
 
 """
-GRF/SEM/MGWR integrated pipeline for sparse accident-grid data.
+Spatial-coordinate Random Forest / SEM / MGWR preview pipeline for sparse accident-grid data.
 - No file writing by default
 - Returns structured pandas/geopandas tables
 
 Main ideas implemented from your memo:
 1) Zero-inflated target 대응: 회귀(acc_count), 가중회귀(weighted_count), 분류(0/1)
 2) 독립변수 MinMax 정규화
-3) GRF-like (RF + spatial coords) 성능검수 + 변수중요도
+3) Random Forest + spatial coordinates 성능검수 + 변수중요도
 4) SEM 근사로 숨은 변수의 공간오차 반영 여부 확인
 5) MGWR는 설치되어 있을 때만 선택 실행
 """
@@ -178,7 +178,7 @@ def run_full_pipeline_no_save(
     def split_xy(y):
         return X[tr_idx], X[te_idx], y[tr_idx], y[te_idx]
 
-    # ========== Model 1: GRF regression (count) ==========
+    # ========== Model 1: spatial-coordinate RF regression (count) ==========
     Xtr, Xte, ytr, yte = split_xy(y_count)
     rf_count = RandomForestRegressor(
         n_estimators=n_estimators,
@@ -192,7 +192,7 @@ def run_full_pipeline_no_save(
     pred_count_te = rf_count.predict(Xte)
     pred_count_all = rf_count.predict(X)
 
-    # ========== Model 2: GRF regression (weighted count) ==========
+    # ========== Model 2: spatial-coordinate RF regression (weighted count) ==========
     Xtr_w, Xte_w, ytr_w, yte_w = split_xy(y_weighted)
     rf_weight = RandomForestRegressor(
         n_estimators=n_estimators,
@@ -206,7 +206,7 @@ def run_full_pipeline_no_save(
     pred_weight_te = rf_weight.predict(Xte_w)
     pred_weight_all = rf_weight.predict(X)
 
-    # ========== Model 3: GRF classifier (0/1) ==========
+    # ========== Model 3: spatial-coordinate RF classifier (0/1) ==========
     Xtr_b, Xte_b, ytr_b, yte_b = split_xy(y_bin)
     rf_bin = RandomForestClassifier(
         n_estimators=n_estimators,

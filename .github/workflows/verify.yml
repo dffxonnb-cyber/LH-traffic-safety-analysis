@@ -22,5 +22,8 @@ jobs:
       - name: Install dashboard dependencies
         run: pip install -r dashboard/requirements.txt
 
+      - name: Rebuild public portfolio evidence
+        run: python scripts/build_portfolio_evidence.py
+
       - name: Run public-safe dashboard smoke tests
         run: python -m unittest discover -s tests -p "test_*.py"

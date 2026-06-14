@@ -5,15 +5,16 @@
 | 범위 | 확인 방법 | 비고 |
 |------|-----------|------|
 | 핵심 결과 화면 | [README](../README.md)의 2개 지도 이미지 확인 | 대표 결과와 시나리오 비교를 바로 확인 가능 |
-| 방법론 | [grf_risk_methodology.md](./grf_risk_methodology.md), [risk_index_methodology.md](./risk_index_methodology.md) | 위험도 정의, 전이 논리, 정규화 기준 |
+| 방법론 | [grf_risk_methodology.md](./grf_risk_methodology.md), [risk_index_methodology.md](./risk_index_methodology.md) | 공간 좌표 포함 Random Forest 위험도 정의, 전이 논리, 정규화 기준 |
 | 검증 수치 | 아래 [TOP35 검증 요약](#top35-validation) 절 | LORO, lift, 강건성, 실행용 컬럼 정리 |
 | 교산 사후 시나리오 매핑 | [gyosan_effect_reduction_by_gid.csv](./data/gyosan_effect_reduction_by_gid.csv) | 교산 100m 격자 기준 저감 매핑 결과 |
+| 공개 Top-20 표 | [public_top20_priority.csv](./data/public_top20_priority.csv) | 공개 시나리오 CSV에서 파생한 순위·정규화 위험도 |
 | UI/코드 구조 | [dashboard/](../dashboard/), [analysis_pipeline/](../analysis_pipeline/) | 대시보드와 분석 흐름 분리 상태 확인 가능 |
 
 ## 공개 저장소만으로는 재현되지 않는 범위
 
 - 원본 공모전 데이터가 필요한 격자 통합 테이블 생성
-- GRF 학습 및 지역별 전이 결과 재산출
+- 공간 좌표 포함 Random Forest 학습 및 지역별 전이 결과 재산출
 - 하남교산 최종 우선순위 CSV의 원본 단계 전체 재실행
 
 ## 왜 완전 재현이 제한되는가
@@ -25,9 +26,10 @@
 ## 대신 무엇으로 신뢰를 확인할 수 있는가
 
 1. 아래 [TOP35 검증 요약](#top35-validation) 절에서 전이 성능과 강건성 수치를 확인합니다.
-2. [grf_risk_methodology.md](./grf_risk_methodology.md)에서 왜 RF/GRF 기반 방식을 택했는지 확인합니다.
+2. [grf_risk_methodology.md](./grf_risk_methodology.md)에서 공간 좌표 포함 Random Forest 방식과 legacy 명칭의 경계를 확인합니다.
 3. [gyosan_effect_reduction_by_gid.csv](./data/gyosan_effect_reduction_by_gid.csv)에서 공개 가능한 수준의 격자 단위 시나리오 결과를 검토합니다.
-4. [build_readme_key_visuals.py](../scripts/build_readme_key_visuals.py)에서 README 시각화 생성 로직을 확인합니다.
+4. [public_top20_priority.csv](./data/public_top20_priority.csv)에서 공개 시나리오 결과 기준 상위 후보를 확인합니다.
+5. [build_portfolio_evidence.py](../scripts/build_portfolio_evidence.py)와 [build_readme_key_visuals.py](../scripts/build_readme_key_visuals.py)에서 공개 증거 생성 로직을 확인합니다.
 
 ## 평가 기준 요약
 
@@ -35,7 +37,7 @@
 - 분리력: Mean AUC `0.8604`
 - 핫스팟 포착력: Mean Top-10% Lift `4.39x`
 - 선정 강건성: Monte Carlo mean Jaccard `0.503`
-- 설명 가능성: `recommended_package`, `recommendation_reason` 컬럼 제공
+- 설명 가능성: 시설 패키지·추천 사유 생성 코드는 확인 가능하나 공개 원본 결과는 `needs confirmation`
 
 ## 한계
 
@@ -81,5 +83,5 @@
 
 ### 실행·발표 연계
 
-- Top20 테이블의 `recommended_package`, `recommendation_reason` 컬럼으로 현장/Q&A 설명에 활용.
+- 로컬 Top20 테이블은 `recommended_package`, `recommendation_reason` 컬럼을 생성하도록 설계되어 있으나 공개 원본 결과는 없어 `needs confirmation`이다.
 - 슬라이드 매핑 예: 검증 `transfer_loro_detail`·`transfer_loro_summary`, 강건성 `gyosan_mc_runs`·`gyosan_scenario_sensitivity`, 실행 `gyosan_top20_facility_blueprint`.

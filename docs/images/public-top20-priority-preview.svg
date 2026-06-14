@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1280" viewBox="0 0 1440 1280">
+<style>
+text { font-family: Pretendard, 'Noto Sans KR', Arial, sans-serif; }
+.mono { font-family: 'Cascadia Code', Consolas, monospace; }
+</style>
+<rect width="1440" height="1280" rx="32" fill="#0d1416"/>
+<rect x="24" y="24" width="1392" height="1232" rx="24" fill="#121c1f" stroke="#35515a" stroke-width="2"/>
+<text x="72" y="86" font-size="20" font-weight="800" fill="#8db6ae" text-anchor="start">PUBLIC TOP-20 PREVIEW</text>
+<text x="72" y="142" font-size="40" font-weight="800" fill="#f3f7f5" text-anchor="start">하남교산 현장 검토 우선 후보</text>
+<text x="72" y="182" font-size="21" font-weight="500" fill="#b5c7c4" text-anchor="start">공개 시나리오 CSV의 격자 순위와 정규화 위험도만 사용한 portfolio-safe 표</text>
+<rect x="72" y="226" width="1296" height="56" rx="12" fill="#203238"/>
+<text x="100" y="260" font-size="17" font-weight="750" fill="#8db6ae" text-anchor="start">Rank</text>
+<text x="230" y="260" font-size="17" font-weight="750" fill="#8db6ae" text-anchor="start">Grid ID</text>
+<text x="560" y="260" font-size="17" font-weight="750" fill="#8db6ae" text-anchor="start">Normalized risk</text>
+<text x="890" y="260" font-size="17" font-weight="750" fill="#8db6ae" text-anchor="start">Public evidence status</text>
+<rect x="72" y="298" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="325" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">1</text>
+<text x="230" y="325" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사726436</text>
+<text x="560" y="325" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="325" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="341" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="368" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">2</text>
+<text x="230" y="368" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사744485</text>
+<text x="560" y="368" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="368" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="384" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="411" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">3</text>
+<text x="230" y="411" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사746484</text>
+<text x="560" y="411" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="411" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="427" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="454" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">4</text>
+<text x="230" y="454" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사747485</text>
+<text x="560" y="454" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="454" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="470" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="497" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">5</text>
+<text x="230" y="497" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사753488</text>
+<text x="560" y="497" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="497" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="513" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="540" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">6</text>
+<text x="230" y="540" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사754476</text>
+<text x="560" y="540" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="540" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="556" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="583" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">7</text>
+<text x="230" y="583" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사755485</text>
+<text x="560" y="583" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">1.0000</text>
+<text x="890" y="583" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="599" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="626" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">8</text>
+<text x="230" y="626" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사748486</text>
+<text x="560" y="626" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.9129</text>
+<text x="890" y="626" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="642" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="669" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">9</text>
+<text x="230" y="669" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사757484</text>
+<text x="560" y="669" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.9057</text>
+<text x="890" y="669" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="685" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="712" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">10</text>
+<text x="230" y="712" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사754486</text>
+<text x="560" y="712" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.8811</text>
+<text x="890" y="712" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="728" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="755" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">11</text>
+<text x="230" y="755" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사750488</text>
+<text x="560" y="755" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.8538</text>
+<text x="890" y="755" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="771" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="798" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">12</text>
+<text x="230" y="798" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사749487</text>
+<text x="560" y="798" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.8245</text>
+<text x="890" y="798" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="814" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="841" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">13</text>
+<text x="230" y="841" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사747484</text>
+<text x="560" y="841" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.7592</text>
+<text x="890" y="841" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="857" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="884" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">14</text>
+<text x="230" y="884" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사743485</text>
+<text x="560" y="884" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.7288</text>
+<text x="890" y="884" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="900" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="927" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">15</text>
+<text x="230" y="927" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사738468</text>
+<text x="560" y="927" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.7081</text>
+<text x="890" y="927" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="943" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="970" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">16</text>
+<text x="230" y="970" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사740467</text>
+<text x="560" y="970" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.6599</text>
+<text x="890" y="970" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="986" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="1013" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">17</text>
+<text x="230" y="1013" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사729448</text>
+<text x="560" y="1013" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.6342</text>
+<text x="890" y="1013" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="1029" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="1056" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">18</text>
+<text x="230" y="1056" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사731451</text>
+<text x="560" y="1056" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.6322</text>
+<text x="890" y="1056" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="1072" width="1296" height="39" rx="6" fill="#172428"/>
+<text x="106" y="1099" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">19</text>
+<text x="230" y="1099" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사731470</text>
+<text x="560" y="1099" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.6299</text>
+<text x="890" y="1099" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="1115" width="1296" height="39" rx="6" fill="#142024"/>
+<text x="106" y="1142" font-size="17" font-weight="700" fill="#f3d38a" text-anchor="start">20</text>
+<text x="230" y="1142" font-size="17" font-weight="650" fill="#e7efec" text-anchor="start">다사745484</text>
+<text x="560" y="1142" font-size="17" font-weight="500" fill="#c2d2cf" text-anchor="start">0.6097</text>
+<text x="890" y="1142" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">scenario CSV에서 공개 확인</text>
+<rect x="72" y="1182" width="1296" height="64" rx="12" fill="#102025" stroke="#4c736d"/>
+<text x="96" y="1222" font-size="17" font-weight="500" fill="#b8cac6" text-anchor="start">시설 패키지·추천 사유 원본은 공개 저장소에 없어 needs confirmation으로 유지합니다. 실제 현장 결정에는 별도 검증이 필요합니다.</text>
+</svg>

@@ -282,7 +282,7 @@ def render_public_safe_mode(mode: str, basemap: str, latest_files: Dict[str, Pat
 
     cards = [
         ("필수 데이터 상태", "미연결", f"{len(missing_dashboard_paths())}개 필수 경로 누락"),
-        ("GRF/SHAP 결과", "선택 연결", "없어도 미리보기는 가능"),
+        ("공간 RF/SHAP 결과", "선택 연결", "없어도 미리보기는 가능"),
         ("지도 스타일", next((name for name, value in MAP_STYLES.items() if value == basemap), basemap), "실데이터 연결 시 적용"),
         ("검토 경로", "README / docs", "공개 저장소 기준"),
     ]
@@ -309,7 +309,7 @@ def render_public_safe_mode(mode: str, basemap: str, latest_files: Dict[str, Pat
             },
             {
                 "문서": "docs/grf_risk_methodology.md",
-                "역할": "GRF 위험도와 전이 논리 설명",
+                "역할": "공간 좌표 포함 Random Forest 위험도와 전이 논리 설명",
                 "경로": "./docs/grf_risk_methodology.md",
             },
             {
@@ -326,7 +326,7 @@ def render_public_safe_mode(mode: str, basemap: str, latest_files: Dict[str, Pat
         if timestamps:
             render_callout(
                 "참고",
-                f"현재 연결된 GRF/SHAP 결과 기준 최신 run 시각은 {max(timestamps).strftime('%Y-%m-%d %H:%M:%S')} 입니다.",
+                f"현재 연결된 공간 RF/SHAP 결과 기준 최신 run 시각은 {max(timestamps).strftime('%Y-%m-%d %H:%M:%S')} 입니다.",
             )
 
     with st.expander("누락된 필수 경로 보기"):
@@ -1124,7 +1124,7 @@ def main() -> None:
             timestamps = [ts for ts in (extract_run_timestamp(path) for path in latest_files.values()) if ts is not None]
             st.success(f"최신 run 감지: {max(timestamps).strftime('%Y-%m-%d %H:%M:%S')}" if timestamps else "최신 run 감지")
         else:
-            st.caption("GRF/SHAP 결과가 없어도 대시보드는 동작합니다.")
+            st.caption("공간 RF/SHAP 결과가 없어도 대시보드는 동작합니다.")
         st.divider()
         st.subheader("분석 어시스턴트")
         model = st.text_input("모델명", value=os.getenv("OPENAI_MODEL", "gpt-4.1-mini"))

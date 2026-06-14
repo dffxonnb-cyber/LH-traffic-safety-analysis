@@ -19,7 +19,7 @@
 ```text
 LH-traffic-safety-analysis/
 ├── analysis_pipeline/   # 핵심 실행 노트북
-├── research_notebooks/  # 보강 분석, GWRF/SHAP, 인사이트 탐색
+├── research_notebooks/  # 공간 RF 보강 분석, SHAP, 인사이트 탐색
 ├── dashboard/           # Streamlit 대시보드
 ├── scripts/             # 실행/요약/시각화 보조 스크립트
 ├── docs/                # 방법론, 변수 정의, 적용 배경, 실행 가이드
@@ -33,7 +33,8 @@ LH-traffic-safety-analysis/
 | [competition_context.md](competition_context.md) | 공모전 배경, 데이터 출처, 요구사항 |
 | [grid_variable_dictionary.md](grid_variable_dictionary.md) | 격자 단위 변수 정의 |
 | [risk_index_methodology.md](risk_index_methodology.md) | 관측 기반 위험점수와 ARI 산출 근거 |
-| [grf_risk_methodology.md](grf_risk_methodology.md) | GRF 기반 예측 위험지수 산출 근거 |
+| [grf_risk_methodology.md](grf_risk_methodology.md) | 공간 좌표 포함 Random Forest 기반 예측 위험지수 산출 근거 |
+| [portfolio_case_study.md](portfolio_case_study.md) | 포트폴리오 요약, 공개 증거, 이력서 문장 |
 | [MODEL_RUN_GUIDE.md](MODEL_RUN_GUIDE.md) | Python 스크립트 실행 가이드 |
 | [qgis_submission_guide.md](qgis_submission_guide.md) | QGIS 제출용 결과 정리 가이드 |
 | [gyosan_site_context.md](gyosan_site_context.md) | 하남교산 적용 배경과 해석 방향 |

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<style>
+text { font-family: Pretendard, 'Noto Sans KR', Arial, sans-serif; }
+.mono { font-family: 'Cascadia Code', Consolas, monospace; }
+</style>
+<rect width="1440" height="900" rx="32" fill="#0d1416"/>
+<rect x="24" y="24" width="1392" height="852" rx="24" fill="#121c1f" stroke="#35515a" stroke-width="2"/>
+<text x="72" y="92" font-size="20" font-weight="800" fill="#8db6ae" text-anchor="start">VALIDATION SUMMARY</text>
+<text x="72" y="154" font-size="42" font-weight="800" fill="#f3f7f5" text-anchor="start">지역 전이 가능성을 먼저 검증</text>
+<text x="72" y="198" font-size="22" font-weight="500" fill="#b5c7c4" text-anchor="start">랜덤 분할이 아니라 한 지역씩 제외하는 Leave-One-Region-Out 방식으로 위험 신호를 점검</text>
+<rect x="72" y="258" width="290" height="190" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="96" y="300" font-size="18" font-weight="800" fill="#f3d38a" text-anchor="start">01</text>
+<text x="96" y="350" font-size="25" font-weight="750" fill="#eef4f1" text-anchor="start">한 지역 제외</text>
+<text x="96" y="388" font-size="16" font-weight="500" fill="#b5c7c4" text-anchor="start">4개 기존 시·구 중 한 곳을 holdout</text>
+<rect x="394" y="258" width="290" height="190" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="418" y="300" font-size="18" font-weight="800" fill="#f3d38a" text-anchor="start">02</text>
+<text x="418" y="350" font-size="25" font-weight="750" fill="#eef4f1" text-anchor="start">나머지 지역 학습</text>
+<text x="418" y="388" font-size="16" font-weight="500" fill="#b5c7c4" text-anchor="start">공간 좌표 포함 Random Forest 위험 모델</text>
+<rect x="716" y="258" width="290" height="190" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="740" y="300" font-size="18" font-weight="800" fill="#f3d38a" text-anchor="start">03</text>
+<text x="740" y="350" font-size="25" font-weight="750" fill="#eef4f1" text-anchor="start">holdout 평가</text>
+<text x="740" y="388" font-size="16" font-weight="500" fill="#b5c7c4" text-anchor="start">AUC와 상위 10% Lift로 위험 신호 확인</text>
+<rect x="1038" y="258" width="290" height="190" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="1062" y="300" font-size="18" font-weight="800" fill="#f3d38a" text-anchor="start">04</text>
+<text x="1062" y="350" font-size="25" font-weight="750" fill="#eef4f1" text-anchor="start">후보 안정성 점검</text>
+<text x="1062" y="388" font-size="16" font-weight="500" fill="#b5c7c4" text-anchor="start">Monte Carlo Top-20 Jaccard 비교</text>
+<rect x="72" y="500" width="1266" height="54" rx="12" fill="#102025" stroke="#29444a"/>
+<text x="96" y="535" font-size="19" font-weight="750" fill="#f3d38a" text-anchor="start">Mean AUC 0.8604</text>
+<text x="390" y="535" font-size="18" font-weight="500" fill="#c2d2cf" text-anchor="start">위험 격자와 비위험 격자를 전반적으로 구분하는 정도</text>
+<rect x="72" y="570" width="1266" height="54" rx="12" fill="#102025" stroke="#29444a"/>
+<text x="96" y="605" font-size="19" font-weight="750" fill="#f3d38a" text-anchor="start">Top-10% Lift 4.39×</text>
+<text x="390" y="605" font-size="18" font-weight="500" fill="#c2d2cf" text-anchor="start">상위 위험 후보군에 사고 발생 신호가 평균보다 집중된 정도</text>
+<rect x="72" y="640" width="1266" height="54" rx="12" fill="#102025" stroke="#29444a"/>
+<text x="96" y="675" font-size="19" font-weight="750" fill="#f3d38a" text-anchor="start">Worst holdout AUC 0.7979</text>
+<text x="390" y="675" font-size="18" font-weight="500" fill="#c2d2cf" text-anchor="start">가장 불리한 지역을 제외·검증했을 때의 구분력</text>
+<rect x="72" y="710" width="1266" height="54" rx="12" fill="#102025" stroke="#29444a"/>
+<text x="96" y="745" font-size="19" font-weight="750" fill="#f3d38a" text-anchor="start">Mean Jaccard 0.503</text>
+<text x="390" y="745" font-size="18" font-weight="500" fill="#c2d2cf" text-anchor="start">반복 실험에서 Top-20 후보군이 겹치는 안정성 참고값</text>
+<text x="72" y="824" font-size="17" font-weight="500" fill="#9db2ae" text-anchor="start">주의: 검증 지표는 우선 검토 신호의 품질을 설명하며 실제 시설 설치 효과나 사고 예방의 인과효과를 증명하지 않습니다.</text>
+</svg>

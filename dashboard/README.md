@@ -20,7 +20,7 @@ streamlit run app.py
 
 - 위험 점수(미성년자): `../data/통합_데이터/QGIS_제출용/미성년자_격자_위험점수.geojson`
 - 우선순위(노인): `../data/통합_데이터/QGIS_제출용/노인_격자_우선순위.geojson`
-- GRF/SHAP: `../data/grf_06_outputs/*.csv`
+- 공간 RF/SHAP legacy output path: `../data/grf_06_outputs/*.csv`
 
 공개 저장소에는 승인된 데이터만 포함하세요. 원본 경쟁 데이터나 재배포 권한이 불분명한 파일은 저장소 밖에 두고 `LH_DATA_ROOT`로 연결하는 방식을 권장합니다.
 

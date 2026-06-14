@@ -27,6 +27,10 @@ outputs/
 *.xlsx
 *.xls
 
+# Public-safe review artifact generated from the tracked scenario CSV
+!docs/data/
+!docs/data/public_top20_priority.csv
+
 # Large generated artifacts
 *.pptx
 *.qgz

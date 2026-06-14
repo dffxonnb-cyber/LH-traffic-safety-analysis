@@ -1,0 +1,21 @@
+﻿rank,grid_id,normalized_risk_score,public_evidence_scope,facility_package_public_status,recommendation_reason_public_status
+1,다사726436,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+2,다사744485,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+3,다사746484,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+4,다사747485,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+5,다사753488,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+6,다사754476,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+7,다사755485,1.0000,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+8,다사748486,0.9129,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+9,다사757484,0.9057,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+10,다사754486,0.8811,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+11,다사750488,0.8538,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+12,다사749487,0.8245,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+13,다사747484,0.7592,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+14,다사743485,0.7288,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+15,다사738468,0.7081,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+16,다사740467,0.6599,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+17,다사729448,0.6342,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+18,다사731451,0.6322,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+19,다사731470,0.6299,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output
+20,다사745484,0.6097,tracked scenario CSV top-20,needs confirmation: non-public output,needs confirmation: non-public output

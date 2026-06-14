@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900">
+<style>
+text { font-family: Pretendard, 'Noto Sans KR', Arial, sans-serif; }
+.mono { font-family: 'Cascadia Code', Consolas, monospace; }
+</style>
+<rect width="1440" height="900" rx="32" fill="#0d1416"/>
+<rect x="24" y="24" width="1392" height="852" rx="24" fill="#121c1f" stroke="#35515a" stroke-width="2"/>
+<text x="72" y="92" font-size="20" font-weight="800" fill="#8db6ae" text-anchor="start">LH TRAFFIC SAFETY · PUBLIC EVIDENCE</text>
+<text x="72" y="154" font-size="42" font-weight="800" fill="#f3f7f5" text-anchor="start">100m 격자 교통사고 고위험 신호 분석</text>
+<text x="72" y="198" font-size="22" font-weight="500" fill="#b5c7c4" text-anchor="start">기존 4개 시·구의 공간 패턴을 검증하고 하남교산 현장 검토 우선 후보로 전환</text>
+<rect x="72" y="258" width="300" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="96" y="296" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">SPATIAL UNIT</text>
+<text x="96" y="352" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">100m × 100m</text>
+<text x="96" y="390" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">시설 검토를 위한 세밀한 공간 단위</text>
+<rect x="394" y="258" width="300" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="418" y="296" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">TRAINING SCOPE</text>
+<text x="418" y="352" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">99,323 grids</text>
+<text x="418" y="390" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">4개 기존 시·구 학습 격자</text>
+<rect x="716" y="258" width="300" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="740" y="296" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">TARGET SCOPE</text>
+<text x="740" y="352" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">770 grids</text>
+<text x="740" y="390" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">하남교산 대상 격자</text>
+<rect x="1038" y="258" width="300" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="1062" y="296" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">MODEL</text>
+<text x="1062" y="352" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">Spatial RF</text>
+<text x="1062" y="390" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">공간 좌표 포함 Random Forest</text>
+<rect x="72" y="452" width="405" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="96" y="490" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">LORO MEAN AUC</text>
+<text x="96" y="546" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">0.8604</text>
+<text x="96" y="584" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">지역을 바꿔도 유지되는 위험 구분력</text>
+<rect x="517" y="452" width="405" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="541" y="490" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">TOP-10% LIFT</text>
+<text x="541" y="546" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">4.39×</text>
+<text x="541" y="584" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">상위 위험 후보군의 신호 집중도</text>
+<rect x="962" y="452" width="376" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
+<text x="986" y="490" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">WORST HOLDOUT AUC</text>
+<text x="986" y="546" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">0.7979</text>
+<text x="986" y="584" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">가장 불리한 홀드아웃 결과</text>
+<rect x="72" y="670" width="1266" height="118" rx="18" fill="#102025" stroke="#4c736d"/>
+<text x="96" y="710" font-size="17" font-weight="800" fill="#8db6ae" text-anchor="start">INTERPRETATION</text>
+<text x="96" y="750" font-size="22" font-weight="650" fill="#e6efeb" text-anchor="start">이 수치는 실제 사고 감소 효과가 아니라 현장 점검 후보를 우선순위화하는 의사결정 보조 신호입니다.</text>
+<text x="96" y="780" font-size="17" font-weight="500" fill="#a9bebb" text-anchor="start">검증 원본 재산출에는 비공개 공모전 데이터가 필요하며, 공개 저장소는 요약 지표와 안전한 산출물을 제공합니다.</text>
+<text x="1338" y="832" font-size="15" font-weight="500" fill="#718c89" text-anchor="end">Generated from public-safe repository evidence</text>
+</svg>

@@ -1,14 +1,15 @@
 ﻿#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Run GRF-like ranking model (spatially aware RandomForest):
+Run the spatial-coordinate Random Forest risk ranking model:
 - Target: log1p(acc_count) or log1p(ARI)
 - Features: traffic indicators + centroid coordinates
 - Output: full-grid predicted risk ranking for policy prioritization
 
 Note:
-- This is a practical GRF-like implementation with sklearn RandomForestRegressor.
-- If you later install dedicated GRF libraries, you can replace the estimator only.
+- This implementation uses sklearn RandomForestRegressor with centroid coordinates.
+- The legacy script filename is retained for compatibility; this is not a dedicated
+  geographically weighted random forest implementation.
 """
 
 from __future__ import annotations
