@@ -7,7 +7,7 @@ text { font-family: Pretendard, 'Noto Sans KR', Arial, sans-serif; }
 <rect x="24" y="24" width="1392" height="852" rx="24" fill="#121c1f" stroke="#35515a" stroke-width="2"/>
 <text x="72" y="92" font-size="20" font-weight="800" fill="#8db6ae" text-anchor="start">SCORE COMPARISON · PUBLIC DIAGNOSTIC</text>
 <text x="72" y="154" font-size="42" font-weight="800" fill="#f3f7f5" text-anchor="start">R²=0.006은 무엇을 뜻하는가</text>
-<text x="72" y="198" font-size="22" font-weight="500" fill="#b5c7c4" text-anchor="start">두 정규화 점수 체계가 거의 같은 순위를 만들지 않았다는 진단 결과</text>
+<text x="72" y="198" font-size="22" font-weight="500" fill="#b5c7c4" text-anchor="start">두 정규화 점수 사이의 선형 설명력이 매우 낮다는 진단 결과</text>
 <rect x="72" y="258" width="390" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
 <text x="96" y="296" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">COMPARED SCORE A</text>
 <text x="96" y="352" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">Legacy GWRF</text>
@@ -19,12 +19,12 @@ text { font-family: Pretendard, 'Noto Sans KR', Arial, sans-serif; }
 <rect x="978" y="258" width="360" height="170" rx="18" fill="#172428" stroke="#3c5c64"/>
 <text x="1002" y="296" font-size="18" font-weight="700" fill="#8db6ae" text-anchor="start">LINEAR AGREEMENT</text>
 <text x="1002" y="352" font-size="40" font-weight="800" fill="#f3d38a" text-anchor="start">R² = 0.006</text>
-<text x="1002" y="390" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">같은 순위 체계가 아님</text>
+<text x="1002" y="390" font-size="18" font-weight="500" fill="#b5c7c4" text-anchor="start">선형 설명력이 매우 낮음</text>
 <rect x="72" y="486" width="1266" height="240" rx="18" fill="#102025" stroke="#4c736d"/>
 <text x="96" y="532" font-size="20" font-weight="800" fill="#8db6ae" text-anchor="start">해석 원칙</text>
-<text x="96" y="580" font-size="20" font-weight="500" fill="#e6efeb" text-anchor="start">1. 모델 실패를 뜻하지 않습니다. 서로 다른 위험 개념과 가중치를 반영할 수 있습니다.</text>
-<text x="96" y="626" font-size="20" font-weight="500" fill="#e6efeb" text-anchor="start">2. 두 점수는 대체 관계가 아니라 별도 위험 신호로 비교하고 현장에서 확인해야 합니다.</text>
-<text x="96" y="672" font-size="20" font-weight="500" fill="#e6efeb" text-anchor="start">3. 이 수치는 성능 근거가 아니라 점수 정의 차이를 추가 조사하기 위한 진단 자료입니다.</text>
+<text x="96" y="580" font-size="20" font-weight="500" fill="#e6efeb" text-anchor="start">1. R²는 순위상관 지표가 아니며, 두 점수의 순위 일치 여부를 직접 증명하지 않습니다.</text>
+<text x="96" y="626" font-size="20" font-weight="500" fill="#e6efeb" text-anchor="start">2. 모델 실패가 아니라 서로 다른 위험 개념과 가중치를 반영할 가능성을 보여줍니다.</text>
+<text x="96" y="672" font-size="20" font-weight="500" fill="#e6efeb" text-anchor="start">3. 두 점수는 별도 위험 신호로 비교하고 현장에서 확인해야 합니다.</text>
 <rect x="72" y="758" width="1266" height="72" rx="14" fill="#172428" stroke="#3c5c64"/>
 <text x="96" y="802" font-size="18" font-weight="500" fill="#b8cac6" text-anchor="start">공개 상태: 비교 이미지와 R² 요약은 공개 · 비교 원본 테이블과 재산출 데이터는 needs confirmation</text>
 </svg>

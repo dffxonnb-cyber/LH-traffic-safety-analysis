@@ -251,7 +251,7 @@ LORO는 Mean AUC `0.8604`, Worst holdout AUC `0.7979`, Mean Top-10% Lift `4.39x`
 - 특정 지역에서 학습한 위험 패턴은 다른 지역에 적용할 때 공간 구조와 생활권 차이에 따른 해석 주의가 필요합니다.
 - 시설 패키지와 추천 사유의 공개 원본 결과는 현재 없어 `needs confirmation` 상태입니다.
 - 공개 배포 가능한 Streamlit 코드와 가이드는 있지만 검증 가능한 공개 Dashboard URL은 없어 `needs confirmation` 상태입니다.
-- `research_notebooks/gwrf_vs_priority_correlation.png`의 `R²=0.006`은 legacy GWRF 정규화 위험도와 `09_facility_site_selection`의 정규화 우선순위 점수가 거의 같은 순위를 만들지 않았음을 뜻합니다. 모델 실패가 아니라 서로 다른 위험 개념을 측정할 가능성을 보여주는 진단 자료이며, 두 점수는 별도 신호로 비교하고 현장에서 확인해야 합니다.
+- `research_notebooks/gwrf_vs_priority_correlation.png`의 `R²=0.006`은 legacy GWRF 정규화 위험도와 `09_facility_site_selection`의 정규화 우선순위 점수 사이에서 선형 관계로 설명되는 변동이 매우 적음을 뜻합니다. R²는 순위상관 지표가 아니므로 순위 일치 여부를 직접 증명하지 않으며, 모델 실패가 아니라 서로 다른 위험 개념을 측정할 가능성을 보여주는 진단 자료입니다.
 
 ## Resume-ready Summary
 
