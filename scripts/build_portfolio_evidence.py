@@ -15,6 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE_CSV = ROOT / "docs" / "data" / "gyosan_effect_reduction_by_gid.csv"
 OUTPUT_CSV = ROOT / "docs" / "data" / "public_top20_priority.csv"
+EVIDENCE_STATUS_CSV = ROOT / "docs" / "data" / "public_evidence_status.csv"
 IMAGE_DIR = ROOT / "docs" / "images"
 
 
@@ -168,6 +169,85 @@ def build_validation_summary() -> None:
     )
 
 
+def build_score_comparison_note() -> None:
+    body = [
+        svg_text(72, 92, "SCORE COMPARISON · PUBLIC DIAGNOSTIC", size=20, weight=800, fill="#8db6ae"),
+        svg_text(72, 154, "R²=0.006은 무엇을 뜻하는가", size=42, weight=800, fill="#f3f7f5"),
+        svg_text(
+            72,
+            198,
+            "두 정규화 점수 체계가 거의 같은 순위를 만들지 않았다는 진단 결과",
+            size=22,
+            fill="#b5c7c4",
+        ),
+        *metric_card(72, 258, 390, "Compared score A", "Legacy GWRF", "공간 위험도 정규화 점수"),
+        *metric_card(525, 258, 390, "Compared score B", "09번 점수", "시설 입지 선정 정규화 점수"),
+        *metric_card(978, 258, 360, "Linear agreement", "R² = 0.006", "같은 순위 체계가 아님"),
+        '<rect x="72" y="486" width="1266" height="240" rx="18" fill="#102025" stroke="#4c736d"/>',
+        svg_text(96, 532, "해석 원칙", size=20, weight=800, fill="#8db6ae"),
+        svg_text(96, 580, "1. 모델 실패를 뜻하지 않습니다. 서로 다른 위험 개념과 가중치를 반영할 수 있습니다.", size=20, fill="#e6efeb"),
+        svg_text(96, 626, "2. 두 점수는 대체 관계가 아니라 별도 위험 신호로 비교하고 현장에서 확인해야 합니다.", size=20, fill="#e6efeb"),
+        svg_text(96, 672, "3. 이 수치는 성능 근거가 아니라 점수 정의 차이를 추가 조사하기 위한 진단 자료입니다.", size=20, fill="#e6efeb"),
+        '<rect x="72" y="758" width="1266" height="72" rx="14" fill="#172428" stroke="#3c5c64"/>',
+        svg_text(
+            96,
+            802,
+            "공개 상태: 비교 이미지와 R² 요약은 공개 · 비교 원본 테이블과 재산출 데이터는 needs confirmation",
+            size=18,
+            fill="#b8cac6",
+        ),
+    ]
+    (IMAGE_DIR / "portfolio-score-comparison-note.svg").write_text(
+        svg_document(body), encoding="utf-8"
+    )
+
+
+def write_public_evidence_status() -> None:
+    rows = [
+        {
+            "evidence": "LORO summary metrics",
+            "status": "confirmed public summary",
+            "public_scope": "mean AUC 0.8604; worst holdout AUC 0.7979; mean top-10% lift 4.39x",
+            "limitation": "fold-level transfer_loro_detail.csv is not public",
+        },
+        {
+            "evidence": "Monte Carlo candidate stability",
+            "status": "confirmed public summary",
+            "public_scope": "mean Jaccard 0.503",
+            "limitation": "run-level gyosan_mc_runs.csv is not public",
+        },
+        {
+            "evidence": "facility package and recommendation reason",
+            "status": "needs confirmation",
+            "public_scope": "generation logic only",
+            "limitation": "final public-safe result file is not available",
+        },
+        {
+            "evidence": "dashboard deployment URL",
+            "status": "needs confirmation",
+            "public_scope": "dashboard code and deployment guide only",
+            "limitation": "no verifiable public deployment URL",
+        },
+        {
+            "evidence": "score-system comparison",
+            "status": "confirmed public diagnostic",
+            "public_scope": "legacy GWRF normalized risk vs 09 normalized priority score; R2 0.006",
+            "limitation": "underlying comparison table is not public",
+        },
+        {
+            "evidence": "field inspection and accident reduction",
+            "status": "not available",
+            "public_scope": "none",
+            "limitation": "Top-k is an inspection-priority proposal, not field-validated impact",
+        },
+    ]
+    fieldnames = ["evidence", "status", "public_scope", "limitation"]
+    with EVIDENCE_STATUS_CSV.open("w", encoding="utf-8-sig", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def load_top20() -> list[dict[str, str]]:
     with SOURCE_CSV.open(encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
@@ -253,8 +333,13 @@ def main() -> None:
     write_public_top20(rows)
     build_performance_summary()
     build_validation_summary()
+    build_score_comparison_note()
     build_top20_preview(rows)
-    print(f"Wrote {OUTPUT_CSV.relative_to(ROOT)} and 3 public-safe SVG evidence assets.")
+    write_public_evidence_status()
+    print(
+        f"Wrote {OUTPUT_CSV.relative_to(ROOT)}, {EVIDENCE_STATUS_CSV.relative_to(ROOT)}, "
+        "and 4 public-safe SVG evidence assets."
+    )
 
 
 if __name__ == "__main__":

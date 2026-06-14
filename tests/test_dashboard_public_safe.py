@@ -27,8 +27,10 @@ class DashboardPublicSafeTests(unittest.TestCase):
         expected = [
             PROJECT_ROOT / "docs" / "images" / "portfolio-performance-summary.svg",
             PROJECT_ROOT / "docs" / "images" / "portfolio-validation-summary.svg",
+            PROJECT_ROOT / "docs" / "images" / "portfolio-score-comparison-note.svg",
             PROJECT_ROOT / "docs" / "images" / "public-top20-priority-preview.svg",
             PROJECT_ROOT / "docs" / "data" / "public_top20_priority.csv",
+            PROJECT_ROOT / "docs" / "data" / "public_evidence_status.csv",
         ]
         self.assertEqual([path for path in expected if not path.exists()], [])
 
@@ -44,6 +46,20 @@ class DashboardPublicSafeTests(unittest.TestCase):
         self.assertTrue(
             all("needs confirmation" in row["facility_package_public_status"] for row in rows)
         )
+
+    def test_public_evidence_status_keeps_unverified_results_explicit(self) -> None:
+        import csv
+
+        path = PROJECT_ROOT / "docs" / "data" / "public_evidence_status.csv"
+        with path.open(encoding="utf-8-sig", newline="") as handle:
+            rows = {row["evidence"]: row for row in csv.DictReader(handle)}
+
+        self.assertEqual(rows["dashboard deployment URL"]["status"], "needs confirmation")
+        self.assertEqual(
+            rows["facility package and recommendation reason"]["status"],
+            "needs confirmation",
+        )
+        self.assertEqual(rows["field inspection and accident reduction"]["status"], "not available")
 
 
 if __name__ == "__main__":

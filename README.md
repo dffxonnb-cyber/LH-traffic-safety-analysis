@@ -35,11 +35,15 @@
 | --- | --- |
 | [Performance Summary](./docs/images/portfolio-performance-summary.svg) | 공간 단위, 학습·대상 범위, 핵심 검증 지표 |
 | [Validation Summary](./docs/images/portfolio-validation-summary.svg) | LORO 흐름과 AUC·Lift·Jaccard의 평이한 해석 |
+| [Score Comparison Note](./docs/images/portfolio-score-comparison-note.svg) | `R²=0.006` 비교 대상과 의사결정 해석 |
 | [Public Top-20 Preview](./docs/images/public-top20-priority-preview.svg) | 공개 시나리오 CSV 기준 상위 격자 순위와 정규화 위험도 |
 | [Public Top-20 CSV](./docs/data/public_top20_priority.csv) | 공개 검토용 20개 후보 표 |
+| [Public Evidence Status](./docs/data/public_evidence_status.csv) | 확인됨·`needs confirmation`·미보유 근거 상태 |
 | [Portfolio Case Study](./docs/portfolio_case_study.md) | 이력서 문장, 한계, 공개 근거 링크 |
 
 시설 패키지와 추천 사유를 생성하는 코드는 존재하지만 해당 원본 결과 파일은 공개 저장소에 없습니다. 따라서 공개 Top-20 표에서는 두 필드를 `needs confirmation`으로 명시합니다.
+
+LORO는 Mean AUC `0.8604`, Worst holdout AUC `0.7979`, Mean Top-10% Lift `4.39x`의 공개 요약을 제공합니다. 다만 fold별 원본 `transfer_loro_detail.csv`와 run-level Monte Carlo 결과는 공개 저장소에 없어 원본 재검산 범위는 `needs confirmation`입니다.
 
 ## Project Context
 
@@ -241,11 +245,13 @@
 ## Limitations
 
 - 하남교산 적용 결과는 실제 사후 효과 검증이 아니라 시나리오 기반 예상 변화입니다.
+- 실제 현장 점검 결과와 사고 감소 사후 데이터는 없습니다. Top-k 결과는 현장 검토 우선순위 제안이며 설치 효과로 해석하지 않습니다.
 - 원본 공모전 데이터가 공개 저장소에 포함되지 않아 전체 파이프라인의 완전 재현은 제한됩니다.
 - 위험도와 우선순위는 의사결정 보조 지표이며, 실제 설치 결정에는 현장 조사, 예산, 법규, 주민 수요, 행정 절차가 함께 고려되어야 합니다.
 - 특정 지역에서 학습한 위험 패턴은 다른 지역에 적용할 때 공간 구조와 생활권 차이에 따른 해석 주의가 필요합니다.
 - 시설 패키지와 추천 사유의 공개 원본 결과는 현재 없어 `needs confirmation` 상태입니다.
-- `research_notebooks/gwrf_vs_priority_correlation.png`의 `R²=0.006`은 두 점수 체계가 거의 같은 순위를 만들지 않았음을 뜻합니다. 이는 성능 증거가 아니라 점수 정의 차이를 추가 조사해야 한다는 진단 결과입니다.
+- 공개 배포 가능한 Streamlit 코드와 가이드는 있지만 검증 가능한 공개 Dashboard URL은 없어 `needs confirmation` 상태입니다.
+- `research_notebooks/gwrf_vs_priority_correlation.png`의 `R²=0.006`은 legacy GWRF 정규화 위험도와 `09_facility_site_selection`의 정규화 우선순위 점수가 거의 같은 순위를 만들지 않았음을 뜻합니다. 모델 실패가 아니라 서로 다른 위험 개념을 측정할 가능성을 보여주는 진단 자료이며, 두 점수는 별도 신호로 비교하고 현장에서 확인해야 합니다.
 
 ## Resume-ready Summary
 

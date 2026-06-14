@@ -1,0 +1,7 @@
+﻿evidence,status,public_scope,limitation
+LORO summary metrics,confirmed public summary,mean AUC 0.8604; worst holdout AUC 0.7979; mean top-10% lift 4.39x,fold-level transfer_loro_detail.csv is not public
+Monte Carlo candidate stability,confirmed public summary,mean Jaccard 0.503,run-level gyosan_mc_runs.csv is not public
+facility package and recommendation reason,needs confirmation,generation logic only,final public-safe result file is not available
+dashboard deployment URL,needs confirmation,dashboard code and deployment guide only,no verifiable public deployment URL
+score-system comparison,confirmed public diagnostic,legacy GWRF normalized risk vs 09 normalized priority score; R2 0.006,underlying comparison table is not public
+field inspection and accident reduction,not available,none,"Top-k is an inspection-priority proposal, not field-validated impact"

@@ -32,11 +32,15 @@
 | --- | --- |
 | 성능·범위 요약 | [portfolio-performance-summary.svg](./images/portfolio-performance-summary.svg) |
 | 검증 방식과 지표 해석 | [portfolio-validation-summary.svg](./images/portfolio-validation-summary.svg) |
+| 점수 체계 비교 진단 | [portfolio-score-comparison-note.svg](./images/portfolio-score-comparison-note.svg) |
 | 4개 지역 100m 위험도 지도 | [four-city-risk-overview-ko.png](./images/four-city-risk-overview-ko.png) |
 | 공개 Top-20 미리보기 | [public-top20-priority-preview.svg](./images/public-top20-priority-preview.svg) |
 | 공개 Top-20 표 | [public_top20_priority.csv](./data/public_top20_priority.csv) |
+| 공개 근거 상태표 | [public_evidence_status.csv](./data/public_evidence_status.csv) |
 
 공개 Top-20 표는 이미 추적 중인 시나리오 CSV의 격자 순위와 정규화 위험도만 사용합니다. 시설 패키지와 추천 사유를 생성하는 코드는 존재하지만 해당 원본 결과는 공개 저장소에 없으므로 `needs confirmation`으로 표시합니다.
+
+LORO 공개 근거는 Mean AUC `0.8604`, Worst holdout AUC `0.7979`, Mean Top-10% Lift `4.39x` 요약까지입니다. fold별 원본과 run-level Monte Carlo 결과는 공개 저장소에 없으며, Dashboard도 실행 코드만 있고 검증 가능한 공개 URL은 없습니다.
 
 ## Resume-ready
 
@@ -51,7 +55,8 @@
 
 - 시나리오 결과는 실제 사고 감소 효과나 인과효과를 증명하지 않습니다.
 - 모델 출력은 안전시설 설치 결정이 아니라 현장 점검 우선순위를 위한 위험 신호입니다.
+- 실제 현장 점검 및 사고 감소 사후 검증 결과는 없습니다. Top-k는 현장 검토 우선순위 제안입니다.
 - 실제 시설 결정에는 현장 조사, 예산, 법규, 주민 수요, 행정 절차가 필요합니다.
 - 원본 공모전 데이터와 일부 최종 결과 파일은 공개 저장소에 포함되지 않습니다.
 - 지역 간 전이는 도로 구조와 생활권 차이의 영향을 받을 수 있습니다.
-- `research_notebooks/gwrf_vs_priority_correlation.png`의 `R²=0.006`은 두 점수 체계가 거의 같은 순위를 만들지 않았음을 뜻합니다. 이 그림은 성능 근거가 아니라 점수 정의 차이를 추가 조사해야 한다는 진단 자료입니다.
+- `research_notebooks/gwrf_vs_priority_correlation.png`의 `R²=0.006`은 legacy GWRF 정규화 위험도와 09번 시설 입지 선정 정규화 점수가 거의 같은 순위를 만들지 않았음을 뜻합니다. 이는 모델 실패가 아니라 서로 다른 위험 개념을 측정할 가능성을 보여주며, 성능 근거가 아닌 추가 현장 검토용 진단 자료입니다.
