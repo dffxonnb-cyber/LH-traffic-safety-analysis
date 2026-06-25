@@ -10,6 +10,35 @@
 
 행정구역 평균은 같은 지역 내부의 도로 구조와 통행 환경 차이를 가릴 수 있습니다. 그래서 `100m × 100m` 격자를 위험도 산정, 후보 비교, 시설 검토, 시나리오 확인의 공통 단위로 사용했습니다.
 
+## 3-Minute Reviewer Path
+
+| Step | Open | What to check |
+| --- | --- | --- |
+| 1 | [Performance Summary](./docs/images/portfolio-performance-summary.svg) | 공간 단위, 학습·대상 범위, 핵심 검증 지표 |
+| 2 | [Validation Summary](./docs/images/portfolio-validation-summary.svg) | LORO 검증 구조, AUC, Lift, Jaccard 해석 |
+| 3 | [Public Top-20 Preview](./docs/images/public-top20-priority-preview.svg) | 공개 가능한 후보 순위와 정규화 위험도 |
+| 4 | [Reproducibility Guide](./docs/reproducibility_and_validation.md) | 공개 저장소 기준 확인 가능 범위와 한계 |
+| 5 | [Portfolio Case Study](./docs/portfolio_case_study.md) | 이 프로젝트를 이력서/포트폴리오에서 읽는 방식 |
+
+## What This Proves
+
+| Signal | Evidence |
+| --- | --- |
+| **Spatial structuring** | 행정구역 평균 대신 `100m × 100m` 격자를 위험도 산정과 후보 비교의 공통 단위로 사용 |
+| **Transfer validation** | 기존 4개 시·구를 기준으로 LORO 검증을 적용해 지역 간 위험 패턴 유지 여부를 점검 |
+| **Priority design** | 위험도 점수를 현장 검토 우선 후보와 시설 검토 흐름으로 번역 |
+| **Controlled claims** | 실제 사고 감소 효과나 설치 성과를 주장하지 않고 의사결정 보조 신호로 제한 |
+| **Public evidence policy** | 비공개 원천 데이터 없이 확인 가능한 SVG, CSV, 방법론 문서, 검증 요약만 공개 |
+
+## Public Scope Boundary
+
+`needs confirmation`은 결함을 숨기는 표시가 아니라, **공개 저장소에서 실제로 확인 가능한 범위를 통제하기 위한 표시**입니다.
+
+- 확인 가능: 핵심 성능 요약, 검증 요약 이미지, 공개 Top-20 CSV, 공개 evidence status, 방법론 문서, dashboard code
+- 일부 확인 가능: 시설 패키지·추천 사유 생성 로직
+- 확인 필요: 시설 패키지·추천 사유 원본 결과, fold별 LORO 원본, run-level Monte Carlo 결과, 검증 가능한 공개 Dashboard URL
+- 미보유: 현장 검증 결과, 실제 설치 후 사고 감소 사후 데이터
+
 ![Public performance summary](./docs/images/portfolio-performance-summary.svg)
 
 ## Portfolio Summary
