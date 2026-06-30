@@ -255,12 +255,34 @@ def load_top20() -> list[dict[str, str]]:
     return rows[:20]
 
 
+def top20_review_note(rank: int, score: float) -> str:
+    if score >= 0.95:
+        tier = "highest-priority public review candidate"
+    elif score >= 0.80:
+        tier = "high-priority public review candidate"
+    elif score >= 0.65:
+        tier = "upper-tier public review candidate"
+    else:
+        tier = "tracked public review candidate"
+
+    if rank <= 7:
+        rank_note = "top cluster in the public scenario preview"
+    elif rank <= 14:
+        rank_note = "mid top-20 candidate in the public scenario preview"
+    else:
+        rank_note = "lower top-20 candidate in the public scenario preview"
+
+    return f"{tier}; {rank_note}; field inspection required"
+
+
 def write_public_top20(rows: list[dict[str, str]]) -> None:
     fieldnames = [
         "rank",
         "grid_id",
         "normalized_risk_score",
         "public_evidence_scope",
+        "public_review_note",
+        "claim_boundary",
         "facility_package_public_status",
         "recommendation_reason_public_status",
     ]
@@ -268,12 +290,16 @@ def write_public_top20(rows: list[dict[str, str]]) -> None:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
+            rank = int(row["grid_rank"])
+            score = float(row["RiskScore_A_norm_grid"])
             writer.writerow(
                 {
-                    "rank": row["grid_rank"],
+                    "rank": rank,
                     "grid_id": row["gid"],
-                    "normalized_risk_score": f'{float(row["RiskScore_A_norm_grid"]):.4f}',
+                    "normalized_risk_score": f"{score:.4f}",
                     "public_evidence_scope": "tracked scenario CSV top-20",
+                    "public_review_note": top20_review_note(rank, score),
+                    "claim_boundary": "inspection-priority signal only; not field-validated impact",
                     "facility_package_public_status": "needs confirmation: non-public output",
                     "recommendation_reason_public_status": "needs confirmation: non-public output",
                 }

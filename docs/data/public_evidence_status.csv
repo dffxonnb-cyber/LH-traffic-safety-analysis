@@ -1,9 +1,7 @@
 ﻿evidence,status,public_scope,limitation
-spatial unit and scope,confirmed public summary,"100m x 100m grid; 99,323 training grids; 770 target grids","scope is public summary; raw grid integration data is not public"
-LORO summary metrics,confirmed public summary,"mean AUC 0.8604; worst holdout AUC 0.7979; mean top-10% lift 4.39x","fold-level transfer_loro_detail.csv is not public"
-Monte Carlo candidate stability,confirmed public summary,"mean Jaccard 0.503","run-level gyosan_mc_runs.csv is not public"
-public top20 priority preview,confirmed public artifact,"top-20 grid_id and normalized risk score are available in docs/data/public_top20_priority.csv","facility package and recommendation reason outputs are not public"
-facility package and recommendation reason,needs confirmation,"generation logic only","final public-safe result file is not available"
-dashboard deployment URL,needs confirmation,"dashboard code and public-safe fallback guide are available; public deployment URL is not verified","no verifiable public deployment URL"
-score-system comparison,confirmed public diagnostic,"legacy GWRF normalized risk vs 09 normalized priority score; R2 0.006","underlying comparison table is not public"
-field inspection and accident reduction,not available,"none","Top-k is an inspection-priority proposal, not field-validated impact"
+LORO summary metrics,confirmed public summary,mean AUC 0.8604; worst holdout AUC 0.7979; mean top-10% lift 4.39x,fold-level transfer_loro_detail.csv is not public
+Monte Carlo candidate stability,confirmed public summary,mean Jaccard 0.503,run-level gyosan_mc_runs.csv is not public
+facility package and recommendation reason,needs confirmation,generation logic only,final public-safe result file is not available
+dashboard deployment URL,needs confirmation,dashboard code and deployment guide only,no verifiable public deployment URL
+score-system comparison,confirmed public diagnostic,legacy GWRF normalized risk vs 09 normalized priority score; R2 0.006,underlying comparison table is not public
+field inspection and accident reduction,not available,none,"Top-k is an inspection-priority proposal, not field-validated impact"
