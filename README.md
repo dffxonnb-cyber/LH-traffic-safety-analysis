@@ -10,6 +10,18 @@
 
 행정구역 평균은 같은 지역 내부의 도로 구조와 통행 환경 차이를 가릴 수 있습니다. 그래서 `100m × 100m` 격자를 위험도 산정, 후보 비교, 시설 검토, 시나리오 확인의 공통 단위로 사용했습니다.
 
+## Reviewer Takeaway
+
+이 프로젝트는 실제 안전시설 설치 효과나 사고 감소 인과효과를 증명하지 않습니다.
+
+대신 사고 이력이 부족한 신도시에서 **어떤 100m 격자를 먼저 현장 검토해야 하는지**를 판단하기 위한 위험 신호 설계와 공개 가능한 검증 경계를 보여줍니다.
+
+- `100m × 100m` 격자를 공통 의사결정 단위로 사용했습니다.
+- 기존 4개 시·구 `99,323개` 학습 격자의 사고·교통·공간 패턴을 바탕으로 하남교산 `770개` 대상 격자를 우선순위화했습니다.
+- LORO 검증으로 지역 간 전이 가능성을 점검했습니다.
+- 공개 저장소에서는 요약 지표, public-safe CSV, SVG evidence, 방법론 문서, evidence audit을 확인할 수 있습니다.
+- fold-level 원본, run-level Monte Carlo, 시설 패키지·추천 사유 최종 결과, 현장 검증 결과는 공개 evidence로 주장하지 않습니다.
+
 ## 3-Minute Reviewer Path
 
 | Step | Open | What to check |
@@ -34,10 +46,18 @@
 
 `needs confirmation`은 결함을 숨기는 표시가 아니라, **공개 저장소에서 실제로 확인 가능한 범위를 통제하기 위한 표시**입니다.
 
-- 확인 가능: 핵심 성능 요약, 검증 요약 이미지, 공개 Top-20 CSV, 공개 evidence status, 방법론 문서, dashboard code
-- 일부 확인 가능: 시설 패키지·추천 사유 생성 로직
-- 확인 필요: 시설 패키지·추천 사유 원본 결과, fold별 LORO 원본, run-level Monte Carlo 결과, 검증 가능한 공개 Dashboard URL
-- 미보유: 현장 검증 결과, 실제 설치 후 사고 감소 사후 데이터
+| Scope | Public Status | What reviewers can check |
+| --- | --- | --- |
+| 공간 단위와 데이터 범위 | `confirmed public summary` | `100m × 100m` 격자, 4개 기존 시·구 `99,323개` 학습 격자, 하남교산 `770개` 대상 격자 |
+| LORO 전이 검증 요약 | `confirmed public summary` | Mean AUC `0.8604`, Worst holdout AUC `0.7979`, Mean Top-10% Lift `4.39x` |
+| Monte Carlo 후보 안정성 | `confirmed public summary` | Top-20 후보군 안정성 참고값인 mean Jaccard `0.503` |
+| 공개 Top-20 후보 | `confirmed public artifact` | [public_top20_priority.csv](./docs/data/public_top20_priority.csv)의 상위 20개 격자와 정규화 위험도 |
+| 점수 체계 진단 | `confirmed public diagnostic` | legacy GWRF 정규화 위험도와 09번 시설 입지 선정 정규화 점수의 `R²=0.006` 진단 |
+| Dashboard 공개 배포 URL | `needs confirmation` | Streamlit 코드와 public-safe fallback 구조는 확인 가능하나, 검증 가능한 공개 배포 URL은 없음 |
+| 시설 패키지·추천 사유 | `needs confirmation` | 생성 로직은 설명 가능하지만 최종 공개 원본 결과 파일은 없음 |
+| 현장 점검·사고 감소 효과 | `not available` | 실제 설치 결과, 현장 점검 결과, 사고 감소 사후 검증 데이터 없음 |
+
+공개 저장소는 full retraining 저장소가 아니라, **결과를 검토하고 의사결정 구조와 검증 경계를 이해하기 위한 public-safe evidence 저장소**로 설계했습니다.
 
 ![Public performance summary](./docs/images/portfolio-performance-summary.svg)
 
@@ -60,17 +80,17 @@
 
 공개 증거 자산은 비공개 원천 데이터나 좌표를 새로 노출하지 않고, 저장소에서 이미 확인 가능한 범위만 요약합니다.
 
-| Evidence | 확인 내용 |
-| --- | --- |
-| [Performance Summary](./docs/images/portfolio-performance-summary.svg) | 공간 단위, 학습·대상 범위, 핵심 검증 지표 |
-| [Validation Summary](./docs/images/portfolio-validation-summary.svg) | LORO 흐름과 AUC·Lift·Jaccard의 평이한 해석 |
-| [Score Comparison Note](./docs/images/portfolio-score-comparison-note.svg) | `R²=0.006` 비교 대상과 의사결정 해석 |
-| [Public Top-20 Preview](./docs/images/public-top20-priority-preview.svg) | 공개 시나리오 CSV 기준 상위 격자 순위와 정규화 위험도 |
-| [Public Top-20 CSV](./docs/data/public_top20_priority.csv) | 공개 검토용 20개 후보 표 |
-| [Public Evidence Status](./docs/data/public_evidence_status.csv) | 확인됨·`needs confirmation`·미보유 근거 상태 |
-| [Portfolio Case Study](./docs/portfolio_case_study.md) | 이력서 문장, 한계, 공개 근거 링크 |
+| Evidence | Public Status | 확인 내용 |
+| --- | --- | --- |
+| [Performance Summary](./docs/images/portfolio-performance-summary.svg) | `confirmed public summary` | 공간 단위, 학습·대상 범위, 핵심 검증 지표 |
+| [Validation Summary](./docs/images/portfolio-validation-summary.svg) | `confirmed public summary` | LORO 흐름과 AUC·Lift·Jaccard의 평이한 해석 |
+| [Score Comparison Note](./docs/images/portfolio-score-comparison-note.svg) | `confirmed public diagnostic` | `R²=0.006` 비교 대상과 해석 |
+| [Public Top-20 Preview](./docs/images/public-top20-priority-preview.svg) | `confirmed public artifact` | 공개 시나리오 CSV 기준 상위 격자 순위와 정규화 위험도 |
+| [Public Top-20 CSV](./docs/data/public_top20_priority.csv) | `confirmed public artifact` | 공개 검토용 20개 후보 표 |
+| [Public Evidence Status](./docs/data/public_evidence_status.csv) | `confirmed public artifact` | 확인됨·제한적 공개·`needs confirmation`·미보유 근거 상태 |
+| [Public Evidence Audit](./docs/evidence_audit.md) | `confirmed public summary` | 리뷰어가 확인 가능한 근거와 주장하지 않는 범위 |
 
-시설 패키지와 추천 사유를 생성하는 코드는 존재하지만 해당 원본 결과 파일은 공개 저장소에 없습니다. 따라서 공개 Top-20 표에서는 두 필드를 `needs confirmation`으로 명시합니다.
+시설 패키지와 추천 사유를 생성하는 코드는 존재하지만 해당 최종 원본 결과 파일은 공개 저장소에 없습니다. 따라서 공개 Top-20 표에서는 해당 결과를 `needs confirmation`으로 유지합니다.
 
 LORO는 Mean AUC `0.8604`, Worst holdout AUC `0.7979`, Mean Top-10% Lift `4.39x`의 공개 요약을 제공합니다. 다만 fold별 원본 `transfer_loro_detail.csv`와 run-level Monte Carlo 결과는 공개 저장소에 없어 원본 재검산 범위는 `needs confirmation`입니다.
 
