@@ -29,8 +29,9 @@
 | 1 | [Performance Summary](./docs/images/portfolio-performance-summary.svg) | 공간 단위, 학습·대상 범위, 핵심 검증 지표 |
 | 2 | [Validation Summary](./docs/images/portfolio-validation-summary.svg) | LORO 검증 구조, AUC, Lift, Jaccard 해석 |
 | 3 | [Public Top-20 Preview](./docs/images/public-top20-priority-preview.svg) | 공개 가능한 후보 순위와 정규화 위험도 |
-| 4 | [Reproducibility Guide](./docs/reproducibility_and_validation.md) | 공개 저장소 기준 확인 가능 범위와 한계 |
-| 5 | [Portfolio Case Study](./docs/portfolio_case_study.md) | 이 프로젝트를 이력서/포트폴리오에서 읽는 방식 |
+| 4 | [Field Review Handoff](./docs/field-review-handoff.md) | Top-20 순위를 현장 재확인 항목과 claim boundary로 읽는 방법 |
+| 5 | [Reproducibility Guide](./docs/reproducibility_and_validation.md) | 공개 저장소 기준 확인 가능 범위와 한계 |
+| 6 | [Portfolio Case Study](./docs/portfolio_case_study.md) | 이 프로젝트를 이력서/포트폴리오에서 읽는 방식 |
 
 ## What This Proves
 

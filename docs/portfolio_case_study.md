@@ -40,6 +40,8 @@
 
 공개 Top-20 표는 이미 추적 중인 시나리오 CSV의 격자 순위와 정규화 위험도만 사용합니다. 시설 패키지와 추천 사유를 생성하는 코드는 존재하지만 해당 원본 결과는 공개 저장소에 없으므로 `needs confirmation`으로 표시합니다.
 
+현장 검토로 넘길 때의 재확인 항목과 주장 경계는 [field-review-handoff.md](field-review-handoff.md)에 별도로 정리했습니다.
+
 LORO 공개 근거는 Mean AUC `0.8604`, Worst holdout AUC `0.7979`, Mean Top-10% Lift `4.39x` 요약까지입니다. fold별 원본과 run-level Monte Carlo 결과는 공개 저장소에 없으며, Dashboard도 실행 코드만 있고 검증 가능한 공개 URL은 없습니다.
 
 ## Resume-ready
