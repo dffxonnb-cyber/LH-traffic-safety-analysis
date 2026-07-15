@@ -6,6 +6,9 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   docs-and-dashboard:
     runs-on: ubuntu-latest
@@ -22,8 +25,21 @@ jobs:
       - name: Install dashboard dependencies
         run: pip install -r dashboard/requirements.txt
 
+      - name: Compile public Python entry points
+        run: python -m compileall dashboard scripts
+
       - name: Rebuild public portfolio evidence
         run: python scripts/build_portfolio_evidence.py
 
-      - name: Run public-safe dashboard smoke tests
+      - name: Run public-safe dashboard and evidence tests
         run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Verify generated evidence is committed
+        run: |
+          git diff --ignore-space-at-eol --exit-code -- \
+            docs/data/public_top20_priority.csv \
+            docs/data/public_evidence_status.csv \
+            docs/images/portfolio-performance-summary.svg \
+            docs/images/portfolio-validation-summary.svg \
+            docs/images/portfolio-score-comparison-note.svg \
+            docs/images/public-top20-priority-preview.svg

@@ -1,6 +1,8 @@
 # Field Review Handoff Guide
 
-This document explains how to read the public Top-20 / priority ranking output as a field-review handoff artifact. The ranking is a public-safe review signal for 100m grid candidates, not a final facility installation decision.
+This document explains how to read the public Top-20 ranking as a field-review handoff artifact. The ranking is a public-safe review signal for 100m grid candidates, not a final facility installation decision.
+
+The frozen model, score, pipeline, and evidence scope are defined in [canonical_project_scope.md](canonical_project_scope.md).
 
 ## What the Risk Ranking Is For
 
@@ -9,7 +11,7 @@ The risk ranking helps reviewers decide which 100m grid candidates should be che
 Use the ranking as:
 
 - A field-review priority signal
-- A way to compare candidate grids under the same scoring baseline
+- A way to compare candidate grids under the same public scoring baseline
 - A handoff artifact for site validation and stakeholder review
 - A starting point for checking whether the public risk signal matches local conditions
 
@@ -19,6 +21,18 @@ Do not use the ranking as:
 - A direct recommendation to install a facility
 - A replacement for site inspection, engineering review, budget review, regulation review, or local stakeholder review
 
+## Canonical Public Ranking
+
+The public Top-20 preview is generated from the tracked `docs/data/gyosan_effect_reduction_by_gid.csv` artifact.
+
+- review score: `RiskScore_A_norm_grid`
+- review order: `grid_rank`
+- generated table: `docs/data/public_top20_priority.csv`
+
+The `우선순위_점수` produced by `07_gyosan_priority_ranking.ipynb` and the k-scenario site selections produced by `09_facility_site_selection.ipynb` are auxiliary legacy paths. Their recorded candidates differ from the current public Top-20, so they must not be presented as the same final ranking.
+
+The public repository does not contain the full private-data lineage needed to regenerate `RiskScore_A_grid` from the final model. Therefore the public ranking is a confirmed artifact, while the full model-to-public-score lineage remains `needs confirmation`.
+
 ## How to Read the Public Top-20 Preview
 
 The public Top-20 preview shows candidate grid rankings and normalized risk scores from public-safe artifacts. It does not disclose private field records or claim that a listed grid is ready for installation.
@@ -27,16 +41,17 @@ When reading the preview:
 
 - Treat rank as review order, not final priority approval.
 - Treat normalized risk score as a signal for comparison, not a causal explanation.
-- Treat facility package and recommendation reason fields marked `needs confirmation` as intentionally unresolved until field validation.
+- Treat facility package and recommendation reason fields marked `needs confirmation` as deliberately excluded from the final public claim.
 - Compare nearby candidates under the same baseline before selecting any site for further review.
 - Use the output as a handoff into professional and local review, not as an automated decision.
 
 Related public artifacts:
 
-- [Public Top-20 preview image](./images/public-top20-priority-preview.svg)
-- [Public Top-20 CSV](./data/public_top20_priority.csv)
-- [Public evidence audit](./data/public_evidence_audit.json)
-- [Reproducibility and validation guide](./reproducibility_and_validation.md)
+- [Canonical project scope](canonical_project_scope.md)
+- [Public Top-20 preview image](images/public-top20-priority-preview.svg)
+- [Public Top-20 CSV](data/public_top20_priority.csv)
+- [Public evidence audit](evidence_audit.md)
+- [Reproducibility and validation guide](reproducibility_and_validation.md)
 
 ## Field Review Checklist
 
