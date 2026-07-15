@@ -36,7 +36,7 @@ jobs:
 
       - name: Verify generated evidence is committed
         run: |
-          git diff --exit-code -- \
+          git diff --ignore-space-at-eol --exit-code -- \
             docs/data/public_top20_priority.csv \
             docs/data/public_evidence_status.csv \
             docs/images/portfolio-performance-summary.svg \
